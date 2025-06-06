@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\img\\hintergrund.img||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:img\\hintergrund.img||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\index.html||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\register.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:register.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\dashboard.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dashboard.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dashboard.html",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\dashboard.html",
+              "RelativeDocumentMoniker": "dashboard.html",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\dashboard.html",
+              "RelativeToolTip": "dashboard.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-29T09:09:40.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "register.html",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\register.html",
+              "RelativeDocumentMoniker": "register.html",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\register.html",
+              "RelativeToolTip": "register.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-29T08:39:58.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "login.html",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\login.html",
+              "RelativeDocumentMoniker": "login.html",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\login.html",
+              "RelativeToolTip": "login.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-29T08:39:43.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-29T08:39:12.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "register.js",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\register.js",
+              "RelativeDocumentMoniker": "js\\register.js",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\register.js",
+              "RelativeToolTip": "js\\register.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-29T08:38:53.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "login.js",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\login.js",
+              "RelativeDocumentMoniker": "js\\login.js",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\js\\login.js",
+              "RelativeToolTip": "js\\login.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-29T08:37:21.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "hintergrund.img",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\img\\hintergrund.img",
+              "RelativeDocumentMoniker": "img\\hintergrund.img",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\img\\hintergrund.img",
+              "RelativeToolTip": "img\\hintergrund.img",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJYSURBVDhPlZRBTxNRFEbPG6YzraWUaaEJbcXGpC4IqabYFiNggjEaNdGVutdIxJVLdeGvMCTqr3DNGkPURsNKJJIIqW0oTKfQTpnpzLgQDbSWhG/18u49J7nJe1cADIRC8fkncx/BG6F3bA/x/nPxy7PFxcXNIxXP8\u002BSDY9/omdGRh4/mjtQPp1Iu\u002B969XbhzZWbKtSzrxdLS0o92u\u002B0BIISQOoHjEk8k5NnZq3dvXL/2qlAonFMU5R9/IpGiqGQy533T0zP3bt\u002B6\u002BTyXy6VlWRacRCSEYLe\u002By/LyB\u002Bp1Q1EV34Opy5deBgKBAY4TOY5DqVTi\u002B9oa31ZX2d7e5kJ2AtXvZyAcJlcoKBFNuy8EvUXNZpP19XVM2wZFwfX52Pc8IsMxxscz5POT5POThEIhH/D/0SzLYqtaZVDTiMVihMNhgv399A8OYto2Pzc3cRynE\u002BsWVSoVjHodSZZxbZudchm9XKbdaqH4/bRsm61qtRPrFrmui\u002BO6NEyTjY0N0uk042Nj2KaJBLRtm/1WqxPrFgkhsGybumHQdhyazSamabJvWei6zl6jgev9eYeH0yUKBoPgutR0Hd0wKBaLfF1ZQUgSjmUhPI9TgUAn1i3SNI1oJEJjb4\u002BarrNjGOzUahi6Th\u002BQjMeJRqOdWLdIkiROJ5OcTaUI\u002Bv147TY4Dn2SRGx4mGQigSz//aKHuM4LAFVVSaVSZLNZ8rkcE9ksmUyGVCqFqqqd7dBLBCDLMkNDQySTSeLxOJqmIUk923uLThrBwWJ7Ov/4E4jjFtt/4v16vfDmYr2\u002BW/oNq8jcTzAFvKQAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-29T08:37:11.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\css\\style.css",
+              "RelativeDocumentMoniker": "css\\style.css",
+              "ToolTip": "C:\\Users\\saski\\OneDrive\\Desktop\\Mentehof\\css\\style.css",
+              "RelativeToolTip": "css\\style.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-29T08:36:57.801Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

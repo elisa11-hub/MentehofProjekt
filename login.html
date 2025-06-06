@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – Mentehof</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Login – Mentehof</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="register.html">Registrieren</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="loginForm" class="form-card">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div id="twofaSection" class="form-card" style="display:none;">
+            <label for="code">2FA-Code:</label>
+            <input type="text" id="code" name="code" maxlength="6" />
+            <button onclick="verifyCode()" class="btn">Code bestätigen</button>
+        </div>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
