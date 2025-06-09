@@ -123,3 +123,49 @@ nav a {
         .form-card .btn:hover {
             background-color: #4c2e14;
         }
+
+
+//forget-password
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 1rem;
+    color: green;
+}

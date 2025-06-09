@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Reitlehrer:in</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="Mentehof Logo" class="logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-card">
+            <h2>Willkommen, Frau Gruber!</h2>
+            <p>Hier verwalten Sie Ihre geplanten Reitkurse.</p>
+
+            <h3>Meine geplanten Kurse</h3>
+            <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead>
+                    <tr style="background-color: #f0e4d7;">
+                        <th style="padding: 8px;">Datum</th>
+                        <th style="padding: 8px;">Uhrzeit</th>
+                        <th style="padding: 8px;">Ort</th>
+                        <th style="padding: 8px;">Teilnehmer</th>
+                        <th style="padding: 8px;">Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px;">13.06.2025</td>
+                        <td style="padding: 8px;">15:00</td>
+                        <td style="padding: 8px;">Reithalle 1</td>
+                        <td style="padding: 8px;">5</td>
+                        <td style="padding: 8px;">
+                            <a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">15.06.2025</td>
+                        <td style="padding: 8px;">09:30</td>
+                        <td style="padding: 8px;">Platz A</td>
+                        <td style="padding: 8px;">3</td>
+                        <td style="padding: 8px;">
+                            <a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 2rem;">
+                <a href="kurs_erstellen.html" class="btn">Neuen Kurs anlegen</a>
+            </div>
+
+            <div style="margin-top: 2rem; background-color: #fff3f0; padding: 1rem; border-left: 5px solid #cc3300;">
+                <strong>Achtung:</strong> Teilnehmerin Lisa H. hat sich heute früh vom Kurs am 13.06. abgemeldet.
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
