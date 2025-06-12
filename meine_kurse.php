@@ -4,11 +4,7 @@ $conn = new mysqli("localhost", "root", "", "reitdatenbank");
 $schueler_id = 1; // Beispiel
 
 $query = "
-SELECT k.name, k.trainer, k.datum, b.pferd, b.zeit, b.status 
-FROM buchungen b
-JOIN kurse k ON b.kurs_id = k.id
-WHERE b.schueler_id = $schueler_id
-ORDER BY k.datum
+X
 ";
 
 $result = $conn->query($query);

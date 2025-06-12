@@ -9,8 +9,8 @@ function ladeKurse() {
 function bucheKurs(kursId) {
   const formData = new FormData();
   formData.append("kurs_id", kursId);
-  formData.append("schueler_id", 1); // Hardcoded für Test, später dynamisch
-  formData.append("pferd", "Bella"); // Ggf. Auswahlfeld ergänzen
+  formData.append("schueler_id", 1); 
+  formData.append("pferd", "Bella"); 
   formData.append("zeit", "10:00");
 
   fetch("kurs_buchen.php", {
