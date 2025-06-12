@@ -20,9 +20,15 @@
     </header>
 
     <main>
-        <form action="#" method="post" class="form-card">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+        <form action="register.php" method="post" class="form-card">
+            <label for="vorname">Vorname:</label>
+            <input type="text" id="vorname" name="vorname" required />
+
+            <label for="nachname">Nachname:</label>
+            <input type="text" id="nachname" name="nachname" required />
+
+            <label for="geburtsdatum">Geburtsdatum:</label>
+            <input type="date" id="geburtsdatum" name="geburtsdatum" required />
 
             <label for="phone">Telefonnummer:</label>
             <input type="tel" id="phone" name="phone" required />
@@ -52,6 +58,7 @@
 
             <button type="submit" class="btn">Registrieren</button>
         </form>
+
     </main>
     <script src="js/register.js"></script>
 
