@@ -1,5 +1,7 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=reitschule", "root", "");
+
+$mysqli = require __DIR__ . "/database.php";
+
 $stmt = $pdo->query("
   X
 ");

@@ -1,5 +1,6 @@
 <?php
 
+$mysqli = require __DIR__ . "/database.php";
 
 $kurs_id = $_POST['kurs_id'];
 $schueler_id = $_POST['schueler_id'];

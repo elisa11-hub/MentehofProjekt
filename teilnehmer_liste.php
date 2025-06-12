@@ -1,6 +1,8 @@
 <?php
+
+$mysqli = require __DIR__ . "/database.php";
 $kursId = $_GET['kurs_id'];
-$pdo = new PDO("mysql:host=localhost;dbname=reitschule", "root", "");
+
 
 $stmt = $pdo->prepare("
 X

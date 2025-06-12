@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "reitdatenbank");
+$mysqli = require __DIR__ . "/database.php";
 
 $schueler_id = 1; // Beispiel
 
