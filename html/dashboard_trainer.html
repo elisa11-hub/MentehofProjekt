@@ -1,74 +1,181 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard – Reitlehrer:in</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentehof Dashboard – Reitlehrer:in</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f6e9d7;
+        }
+
+        header {
+            background-color: #a7794e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #a7794e;
+            text-align: center;
+            padding: 0.5rem 0 1rem;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 1rem;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        .layout {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #e9dac3;
+            padding: 2rem 1rem;
+            border-right: 2px solid #d0c4b0;
+        }
+
+            .sidebar ul {
+                list-style: none;
+            }
+
+            .sidebar li {
+                margin-bottom: 1.2rem;
+            }
+
+            .sidebar a {
+                color: #3e2e1e;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    color: #a6753d;
+                }
+
+        .main {
+            flex-grow: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .section {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f0e4d7;
+        }
+
+        .btn {
+            background-color: #a6753d;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .btn:hover {
+                background-color: #8b5e33;
+            }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="img/logo.jpg" alt="Mentehof Logo" class="logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </nav>
+        Willkommen im Mentehof
     </header>
 
-    <main>
-        <section class="form-card">
-            <h2>Willkommen, Frau Gruber!</h2>
-            <p>Hier verwalten Sie Ihre geplanten Reitkurse.</p>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="logout.html">Logout</a>
+    </nav>
 
-            <h3>Meine geplanten Kurse</h3>
-            <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
-                <thead>
-                    <tr style="background-color: #f0e4d7;">
-                        <th style="padding: 8px;">Datum</th>
-                        <th style="padding: 8px;">Uhrzeit</th>
-                        <th style="padding: 8px;">Ort</th>
-                        <th style="padding: 8px;">Teilnehmer</th>
-                        <th style="padding: 8px;">Aktionen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 8px;">13.06.2025</td>
-                        <td style="padding: 8px;">15:00</td>
-                        <td style="padding: 8px;">Reithalle 1</td>
-                        <td style="padding: 8px;">5</td>
-                        <td style="padding: 8px;">
-                            <a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 8px;">15.06.2025</td>
-                        <td style="padding: 8px;">09:30</td>
-                        <td style="padding: 8px;">Platz A</td>
-                        <td style="padding: 8px;">3</td>
-                        <td style="padding: 8px;">
-                            <a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="layout">
+        <aside class="sidebar">
+            <ul id="nav">
+                <li><a href="#">Dashboard Trainer</a></li>
+            </ul>
+        </aside>
 
-            <div style="margin-top: 2rem;">
-                <a href="kurs_erstellen.html" class="btn">Neuen Kurs anlegen</a>
-            </div>
+        <main class="main">
+            <section class="section" id="dashboard">
+                
 
-            <div style="margin-top: 2rem; background-color: #fff3f0; padding: 1rem; border-left: 5px solid #cc3300;">
-                <strong>Achtung:</strong> Teilnehmerin Lisa H. hat sich heute früh vom Kurs am 13.06. abgemeldet.
-            </div>
-        </section>
-    </main>
+                <h2>Willkommen!</h2>
+                <p>Hier verwalten Sie Ihre geplanten Reitkurse.</p>
 
-     <script src="js/lehrer.js"></script>
+                <h3>Meine geplanten Kurse</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Uhrzeit</th>
+                            <th>Ort</th>
+                            <th>Teilnehmer</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>13.06.2025</td>
+                            <td>15:00</td>
+                            <td>Reithalle 1</td>
+                            <td>5</td>
+                            <td><a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a></td>
+                        </tr>
+                        <tr>
+                            <td>15.06.2025</td>
+                            <td>09:30</td>
+                            <td>Platz A</td>
+                            <td>3</td>
+                            <td><a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 2rem;">
+                    <a href="kurs_erstellen.html" class="btn">Neuen Kurs anlegen</a>
+                </div>
+
+                <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
+                    <strong>Info:</strong>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/lehrer.js"></script>
 
 </body>
+
 </html>

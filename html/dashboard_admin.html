@@ -1,42 +1,126 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard – Mentehof</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentehof Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f6e9d7;
+        }
+
+        header {
+            background-color: #a7794e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #a7794e;
+            text-align: center;
+            padding: 0.5rem 0 1rem;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 1rem;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        .layout {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #e9dac3;
+            padding: 2rem 1rem;
+            border-right: 2px solid #d0c4b0;
+        }
+
+            .sidebar ul {
+                list-style: none;
+            }
+
+            .sidebar li {
+                margin-bottom: 1.2rem;
+            }
+
+            .sidebar a {
+                color: #3e2e1e;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    color: #a6753d;
+                }
+
+        .main {
+            flex-grow: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .section {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="img/logo.jpg" alt="Mentehof Logo" class="logo" />
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </nav>
+        Willkommen im Mentehof
     </header>
 
-    <main>
-        <section class="form-card">
-            <h2>Adminbereich – Mentehof</h2>
-            <p>Verwalten Sie hier Benutzer, Kurse und Rollen.</p>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
 
-            <div style="margin: 1.5rem 0;">
-                <a href="admin_benutzer.html" class="btn">Benutzer verwalten</a>
-                <a href="admin_kurse.html" class="btn">Kurse verwalten</a>
-            </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <ul id="nav">
+                <li><a href="#" onclick="showSection('dashboard')">Dashboard Admin</a></li>
+            </ul>
+        </aside>
 
-            <div style="margin-top: 2rem; background-color: #f8f8f8; padding: 1rem; border-left: 5px solid #999;">
-                <strong>Letzte Aktion:</strong> Reitlehrerin "Frau Gruber" wurde bearbeitet.
-            </div>
-        </section>
-    </main>
+        <main class="main">
+            <section class="section" id="dashboard">
+                
 
-     <script src="js/admin.js"></script>
+                <h2>Adminbereich – Mentehof</h2>
+                <p>Verwalten Sie hier Benutzer, Kurse und Rollen.</p>
+
+                <div style="margin: 1.5rem 0;">
+                    <a href="admin_benutzer.html" class="btn">Benutzer verwalten</a>
+                    <a href="admin_kurse.html" class="btn">Kurse verwalten</a>
+                </div>
+
+                <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
+                    <strong>Info:</strong>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
 
 </body>
+
 </html>
