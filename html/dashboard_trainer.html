@@ -133,8 +133,8 @@
             <ul id="nav">
                 <li><a href="#" onclick="showSection('dashboard')">Dashboard Trainer</a></li>
                 <li><a href="#" onclick="showSection('kalender')">Kalender</a></li>
-                <li><a href="#" onclick="showSection('buchung')">Kurse buchen</a></li>
                 <li><a href="#" onclick="showSection('teilnehmer')">Teilnehmer</a></li>
+                <li><a href="#" onclick="showSection('buchung')">Kurse buchen</a></li>
                 <li><a href="#" onclick="showSection('kurse')">Kurse verwalten</a></li>
             </ul>
         </aside>
@@ -144,8 +144,10 @@
 
 
                 <h2>Willkommen!</h2>
+                <br />
                 <p>Hier verwalten Sie Ihre geplanten Reitkurse.</p>
 
+                <br />
                 <h3>Meine geplanten Kurse</h3>
                 <table>
                     <thead>
@@ -191,8 +193,10 @@
             <!--Kalender -->
             <div id="kalender" class="section">
                 <h1>Kalender</h1>
+                <br />
                 <p>Hier siehst du die kommenden Kurse und Termine.</p>
 
+                <br />
                 <!-- Juli 2025-->
                 <div class="kalender-header">
                     <h2>Juli 2025</h2>
@@ -332,6 +336,7 @@
             <!-- Teilnehmerliste -->
             <div id="teilnehmer" class="section">
                 <h1>Teilnehmerliste</h1>
+                <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                     <a href="register.html" class="btn">+ Neuer Teilnehmer</a>
                     <div>
@@ -360,7 +365,9 @@
             <!--Kurs-->
             <div id="kurse" class="section">
                 <h1>Kurse verwalten</h1>
+                <br />
                 <p>Alle geplanten Kurse im Überblick. (sichtbar für Reitlehrer und Admin)</p>
+                <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                     <a href="#" class="btn" onclick="openKursModal(event)">+ Neuer Kurs</a>
                     <div>
@@ -423,94 +430,17 @@
             </script>
 
 
-            <!--Benutzer-->
-            <div id="benutzer" class="section">
-                <h1>Benutzerverwaltung</h1>
-                <p>Nur für Admins sichtbar.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <a href="#" class="btn">+ Neuer Benutzer</a>
-                    <div>
-                        <a href="#" class="btn">Bearbeiten</a>
-                        <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
-                    </div>
-                </div>
-
-                <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                    <thead>
-                        <tr style="text-align: left;">
-                            <th style="padding-right: 2rem;">Name</th>
-                            <th style="padding-right: 2rem;">E-Mail</th>
-                            <th style="padding-right: 2rem;">Rolle</th>
-                            <th style="padding-right: 2rem;">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Benutzer eingetragen.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Benutzer neu hinzufügen -->
-            <div id="benutzerModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                <h2>Neuen Benutzer anlegen</h2>
-                <form id="benutzerForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="phone">Telefonnummer:</label>
-                    <input type="tel" id="phone" name="phone" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="age">Alter:</label>
-                    <input type="number" id="age" name="age" min="4" max="99" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="height">Größe (cm):</label>
-                    <input type="number" id="height" name="height" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="weight">Gewicht (kg):</label>
-                    <input type="number" id="weight" name="weight" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="level">Reitlevel:</label>
-                    <select id="level" name="level" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="">Bitte auswählen</option>
-                        <option value="Anfänger">Anfänger</option>
-                        <option value="Fortgeschritten">Fortgeschritten</option>
-                        <option value="Profi">Profi</option>
-                    </select>
-
-                    <label for="rolle">Rolle:</label>
-                    <select id="rolle" name="rolle" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="Schüler">Schüler</option>
-                        <option value="Reitlehrer">Reitlehrer</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-
-                    <label for="status">Status:</label>
-                    <select id="status" name="status" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="Aktiv">Aktiv</option>
-                        <option value="Inaktiv">Inaktiv</option>
-                    </select>
-
-                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                        <button type="button" onclick="closeBenutzerModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                        <button type="submit" class="btn">Speichern</button>
-                    </div>
-                </form>
-            </div>
-
+          
             <!-- Buchungsansicht für Schüler:innen -->
             <div id="buchung" class="section">
                 <h1>Kurse buchen</h1>
+                <br />
                 <p>Alle verfügbaren Kurse im Überblick.</p>
+                <br />
 
-
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.3rem;">
                     <a href="#" class="btn">Bearbeiten</a>
-                    <a href="#" class="btn">Löschen</a>
+                    <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                 </div>
 
                 <table style="min-width: 100%; border-spacing: 0 0.5rem;">
