@@ -5,137 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentehof Dashboard – Reitlehrer:in</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="../css/style.css" />
 
-        body {
-            font-family: Georgia, serif;
-            background-color: #f6e9d7;
-        }
-
-        header {
-            background-color: #a7794e;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        nav {
-            background-color: #a7794e;
-            text-align: center;
-            padding: 0.5rem 0 1rem;
-        }
-
-            nav a {
-                color: white;
-                margin: 0 1rem;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-        .layout {
-            display: flex;
-            height: calc(100vh - 140px);
-        }
-
-        .sidebar {
-            width: 220px;
-            background-color: #e9dac3;
-            padding: 2rem 1rem;
-            border-right: 2px solid #d0c4b0;
-        }
-
-            .sidebar ul {
-                list-style: none;
-            }
-
-            .sidebar li {
-                margin-bottom: 1.2rem;
-            }
-
-            .sidebar a {
-                color: #3e2e1e;
-                font-weight: bold;
-                text-decoration: none;
-            }
-
-                .sidebar a:hover {
-                    color: #a6753d;
-                }
-
-        .main {
-            flex-grow: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .section {
-            display: block;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        th {
-            background-color: #f0e4d7;
-        }
-
-        .btn {
-            background-color: #a6753d;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-            .btn:hover {
-                background-color: #8b5e33;
-            }
-        .section {
-            display: none;
-        }
-
-            .section.active {
-                display: block;
-            }
-
-    </style>
 </head>
 
 <body>
 
     <header>
-        Willkommen im Mentehof
+        Willkommen am Mentehof
+
     </header>
 
+
     <nav>
-        <a href="index.html">Startseite</a>
         <a href="logout.html">Logout</a>
     </nav>
 
     <div class="layout">
         <aside class="sidebar">
             <ul id="nav">
-                <li><a href="#" onclick="showSection('dashboard')">Dashboard Trainer</a></li>
+                <li><a href="#" onclick="showSection('dashboard')">Dashboard Reitlehrer</a></li>
                 <li><a href="#" onclick="showSection('kalender')">Kalender</a></li>
-                <li><a href="#" onclick="showSection('buchung')">Kurse buchen</a></li>
-                <li><a href="#" onclick="showSection('teilnehmer')">Teilnehmer</a></li>
-                <li><a href="#" onclick="showSection('kurse')">Kurse verwalten</a></li>
+                <li><a href="#" onclick="showSection('personenliste')">Personen Übersicht</a></li>
+                <li><a href="#" onclick="showSection('termin')">Termine verwalten</a></li>
             </ul>
         </aside>
 
@@ -143,9 +35,11 @@
             <section class="section" id="dashboard">
 
 
-                <h2>Willkommen!</h2>
+                <h1>Willkommen!</h1>
+                <br />
                 <p>Hier verwalten Sie Ihre geplanten Reitkurse.</p>
 
+                <br />
                 <h3>Meine geplanten Kurse</h3>
                 <table>
                     <thead>
@@ -153,31 +47,18 @@
                             <th>Datum</th>
                             <th>Uhrzeit</th>
                             <th>Ort</th>
-                            <th>Teilnehmer</th>
-                            <th>Aktionen</th>
+                            <th>max. Teilnehmeranzahl</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>13.06.2025</td>
-                            <td>15:00</td>
-                            <td>Reithalle 1</td>
-                            <td>5</td>
-                            <td><a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a></td>
-                        </tr>
-                        <tr>
-                            <td>15.06.2025</td>
-                            <td>09:30</td>
-                            <td>Platz A</td>
-                            <td>3</td>
-                            <td><a href="teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a></td>
+                        <!-- Teilnehmerdaten werden hier dynamisch ergänzt -->
+                        <tr style="height: 3rem; background-color: #fff7ef;">
+                            <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Termine eingetragen.</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div style="margin-top: 2rem;">
-                    <a href="kurs_erstellen.html" class="btn">Neuen Kurs anlegen</a>
-                </div>
+
 
                 <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
                     <strong>Info:</strong>
@@ -191,8 +72,10 @@
             <!--Kalender -->
             <div id="kalender" class="section">
                 <h1>Kalender</h1>
+                <br />
                 <p>Hier siehst du die kommenden Kurse und Termine.</p>
 
+                <br />
                 <!-- Juli 2025-->
                 <div class="kalender-header">
                     <h2>Juli 2025</h2>
@@ -329,13 +212,13 @@
 
 
 
-            <!-- Teilnehmerliste -->
-            <div id="teilnehmer" class="section">
-                <h1>Teilnehmerliste</h1>
+            <!-- Personenliste -->
+            <div id="personenliste" class="section">
+                <h1>Personenliste</h1>
+                <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <a href="register.html" class="btn">+ Neuer Teilnehmer</a>
+                    <a href="register.html" class="btn">+ Neue Person anlegen </a>
                     <div>
-                        <a href="#" class="btn">Bearbeiten</a>
                         <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                     </div>
                 </div>
@@ -343,24 +226,31 @@
                 <table style="min-width: 100%; border-spacing: 0 0.5rem;">
                     <thead>
                         <tr style="text-align: left;">
-                            <th style="padding-right: 3rem;">Name</th>
-                            <th style="padding-right: 3rem;">Alter</th>
+                            <th style="padding-right: 3rem;">Vorname</th>
+                            <th style="padding-right: 3rem;">Nachname</th>
+                            <th style="padding-right: 3rem;">Rolle</th>
                             <th style="padding-right: 3rem;">Reitlevel</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Teilnehmerdaten werden hier dynamisch ergänzt -->
                         <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Teilnehmer eingetragen.</td>
+                            <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Personen eingetragen.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!--Kurs-->
-            <div id="kurse" class="section">
-                <h1>Kurse verwalten</h1>
-                <p>Alle geplanten Kurse im Überblick. (sichtbar für Reitlehrer und Admin)</p>
+
+
+
+
+            <!--Termine-->
+            <div id="termin" class="section">
+                <h1>Termine verwalten</h1>
+                <br />
+                <p>Alle geplanten Kurse im Überblick. </p>
+                <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                     <a href="#" class="btn" onclick="openKursModal(event)">+ Neuer Kurs</a>
                     <div>
@@ -373,36 +263,60 @@
                     <thead>
                         <tr style="text-align: left;">
                             <th style="padding-right: 2rem;">Kursname</th>
+                            <th style="padding-right: 2rem;">Bezeichnung</th>
+                            <th style="padding-right: 2rem;">mind. Reitlevel</th>
+                            <th style="padding-right: 2rem;">Kosten</th>
                             <th style="padding-right: 2rem;">Datum</th>
-                            <th style="padding-right: 2rem;">Teilnehmer</th>
+                            <th style="padding-right: 2rem;">Uhrzeit</th>
+                            <th style="padding-right: 2rem;">Dauer</th>
+                            <th style="padding-right: 2rem;">Ort</th>
+                            <th style="padding-right: 2rem;">max. Teilnehmeranzahl</th>
+                            <th style="padding-right: 2rem;">Reitlehrer</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse eingetragen.</td>
+                            <td colspan="10" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse eingetragen.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- neuen Kurs hinzufügen -->
-            <div id="kursModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
+            <div id="kursModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 600px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
                 <h2>Neuen Kurs anlegen</h2>
                 <form id="kursForm">
+                    <br />
+
                     <label for="kursname">Kursname:</label>
-                    <input type="text" id="kursname" name="kursname" required style="width: 100%; margin-bottom: 1rem;">
+                    <input type="text" id="kursname" name="kursname" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="bezeichnung">Bezeichnung:</label>
+                    <input type="text" id="bezeichnung" name="bezeichnung" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="reitlevel">Min.Reitlevel:</label>
+                    <input type="text" id="reitlevel" name="reitlevel" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="kosten">Kosten:</label>
+                    <input type="number" id="kosten" name="kosten" step="0.01" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
 
                     <label for="datum">Datum:</label>
-                    <input type="date" id="datum" name="datum" required style="width: 100%; margin-bottom: 1rem;">
+                    <input type="date" id="datum" name="datum" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
 
                     <label for="zeit">Uhrzeit:</label>
-                    <input type="time" id="zeit" name="zeit" required style="width: 100%; margin-bottom: 1rem;">
+                    <input type="time" id="zeit" name="zeit" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
 
-                    <label for="beschreibung">Beschreibung:</label>
-                    <textarea id="beschreibung" name="beschreibung" rows="3" style="width: 100%; margin-bottom: 1rem;"></textarea>
+                    <label for="dauer">Dauer (in Minuten):</label>
+                    <input type="number" id="dauer" name="dauer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
 
-                    <label for="max">Maximale Teilnehmer:</label>
-                    <input type="number" id="max" name="max" required style="width: 100%; margin-bottom: 1rem;">
+                    <label for="ort">Ort:</label>
+                    <input type="text" id="ort" name="ort" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="max">Maximale Teilnehmeranzahl:</label>
+                    <input type="number" id="max" name="max" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="reitlehrer">Reitlehrer:</label>
+                    <input type="text" id="reitlehrer" name="reitlehrer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
 
                     <div style="display: flex; justify-content: flex-end; gap: 1rem;">
                         <button type="button" onclick="closeKursModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
@@ -410,6 +324,62 @@
                     </div>
                 </form>
             </div>
+
+
+
+
+
+            <!-- Profil-Button (rund, rechts oben) -->
+            <div class="profil-wrapper">
+                <div id="profilButton" onclick="showSection('profil')">
+                    <img src="../img/icon.jpg" alt="Profilbild">
+                </div>
+
+            </div>
+
+            <section class="section" id="profil">
+                <h1>Mein Profil</h1>
+                <br />
+                <form class="form-card">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="z. B. Max" />
+
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" id="nachname" name="nachname" placeholder="z. B. Mustermann" />
+
+                    <label for="telefon">Telefonnummer:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+43 ..." />
+
+                    <label for="ausbildung">Ausbildung:</label>
+                    <input type="text" id="ausbildung" name="ausbildung" placeholder="z. B. Turnierreiten" />
+
+                    <div class="profil-btns">
+                        <button type="submit" class="btn">Speichern</button>
+                        <button type="button" class="btn btn-zurueck" onclick="showSection('dashboard')">Zurück</button>
+                    </div>
+                </form>
+            </section>
+
+
+            <script>
+                function toggleProfilDropdown() {
+                    const dropdown = document.getElementById("profilDropdown");
+                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                }
+
+                // Schließen, wenn außerhalb geklickt wird
+                document.addEventListener("click", function (event) {
+                    const button = document.getElementById("profilButton");
+                    const dropdown = document.getElementById("profilDropdown");
+                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.style.display = "none";
+                    }
+                });
+            </script>
+
+
+
+
 
             <script>
                 function openKursModal(e) {
@@ -423,135 +393,7 @@
             </script>
 
 
-            <!--Benutzer-->
-            <div id="benutzer" class="section">
-                <h1>Benutzerverwaltung</h1>
-                <p>Nur für Admins sichtbar.</p>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <a href="#" class="btn">+ Neuer Benutzer</a>
-                    <div>
-                        <a href="#" class="btn">Bearbeiten</a>
-                        <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
-                    </div>
-                </div>
 
-                <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                    <thead>
-                        <tr style="text-align: left;">
-                            <th style="padding-right: 2rem;">Name</th>
-                            <th style="padding-right: 2rem;">E-Mail</th>
-                            <th style="padding-right: 2rem;">Rolle</th>
-                            <th style="padding-right: 2rem;">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Benutzer eingetragen.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Benutzer neu hinzufügen -->
-            <div id="benutzerModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                <h2>Neuen Benutzer anlegen</h2>
-                <form id="benutzerForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="phone">Telefonnummer:</label>
-                    <input type="tel" id="phone" name="phone" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="age">Alter:</label>
-                    <input type="number" id="age" name="age" min="4" max="99" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="height">Größe (cm):</label>
-                    <input type="number" id="height" name="height" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="weight">Gewicht (kg):</label>
-                    <input type="number" id="weight" name="weight" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="level">Reitlevel:</label>
-                    <select id="level" name="level" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="">Bitte auswählen</option>
-                        <option value="Anfänger">Anfänger</option>
-                        <option value="Fortgeschritten">Fortgeschritten</option>
-                        <option value="Profi">Profi</option>
-                    </select>
-
-                    <label for="rolle">Rolle:</label>
-                    <select id="rolle" name="rolle" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="Schüler">Schüler</option>
-                        <option value="Reitlehrer">Reitlehrer</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-
-                    <label for="status">Status:</label>
-                    <select id="status" name="status" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                        <option value="Aktiv">Aktiv</option>
-                        <option value="Inaktiv">Inaktiv</option>
-                    </select>
-
-                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                        <button type="button" onclick="closeBenutzerModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                        <button type="submit" class="btn">Speichern</button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Buchungsansicht für Schüler:innen -->
-            <div id="buchung" class="section">
-                <h1>Kurse buchen</h1>
-                <p>Alle verfügbaren Kurse im Überblick.</p>
-
-
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-                    <a href="#" class="btn">Bearbeiten</a>
-                    <a href="#" class="btn">Löschen</a>
-                </div>
-
-                <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                    <thead>
-                        <tr style="text-align: left;">
-                            <th style="padding-right: 3rem;">Kursname</th>
-                            <th style="padding-right: 3rem;">Datum</th>
-                            <th style="padding-right: 3rem;">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="buchungsTabelle">
-                        <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse gebucht.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-
-
-
-            <!-- Buchungsformular -->
-            <div id="buchungModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                <h2 id="buchungKursName">Kurs buchen</h2>
-                <form id="buchungForm">
-                    <label for="name">Dein Name:</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="telefon">Telefonnummer:</label>
-                    <input type="tel" id="telefon" name="telefon" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
-
-                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                        <button type="button" onclick="closeBuchungModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                        <button type="submit" class="btn">Buchung abschließen</button>
-                    </div>
-                </form>
-            </div>
 
 
             <script>
@@ -589,7 +431,13 @@
         </main>
     </div>
 
-<script src="js/lehrer.js"></script>
+    <script src="js/lehrer.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection("dashboard");
+        });
+    </script>
 
 </body>
 

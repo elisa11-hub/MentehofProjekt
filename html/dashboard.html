@@ -4,136 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentehof Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Georgia, serif;
-            background-color: #f6e9d7;
-        }
-
-        header {
-            background-color: #a7794e;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        nav {
-            background-color: #a7794e;
-            text-align: center;
-            padding: 0.5rem 0 1rem;
-        }
-
-            nav a {
-                color: white;
-                margin: 0 1rem;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-        .layout {
-            display: flex;
-            height: calc(100vh - 140px);
-        }
-
-        .sidebar {
-            width: 220px;
-            background-color: #e9dac3;
-            padding: 2rem 1rem;
-            border-right: 2px solid #d0c4b0;
-        }
-
-            .sidebar h2 {
-                font-size: 1.2rem;
-                margin-bottom: 1.5rem;
-                color: #3e2e1e;
-            }
-
-            .sidebar ul {
-                list-style: none;
-            }
-
-            .sidebar li {
-                margin-bottom: 1.2rem;
-            }
-
-            .sidebar a {
-                color: #3e2e1e;
-                font-weight: bold;
-                text-decoration: none;
-            }
-
-                .sidebar a:hover {
-                    color: #a6753d;
-                }
-
-        .main {
-            flex-grow: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .section {
-            display: none;
-        }
-
-            .section.active {
-                display: block;
-            }
-
-        .kalender-tabelle {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-            .kalender-tabelle th,
-            .kalender-tabelle td {
-                border: 2px solid #a7794e;
-                text-align: left;
-                vertical-align: top;
-                width: 14.28%; /* 100% / 7 Spalten */
-                height: 150px; 
-                padding: 1rem;
-                background-color: #fff7ef;
-                position: relative;
-            }
-
-                .kalender-tabelle td:hover {
-                    background-color: #f0d9c3;
-                    cursor: pointer;
-                }
-
-        .kalender-tag {
-            font-weight: bold;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .kalender-header h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
+   
 </head>
 <body>
 
     <header>
-        Willkommen im Mentehof-Dashboard
+        Willkommen am Mentehof
     </header>
 
     <nav>
-        <a href="index.html">Startseite</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
@@ -159,23 +39,25 @@
                 <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
                     <thead>
                         <tr style="background-color: #f0e4d7;">
-                            <th style="padding: 8px;">Datum</th>
-                            <th style="padding: 8px;">Zeit</th>
-                            <th style="padding: 8px;">Trainer:in</th>
-                            <th style="padding: 8px;">Pferd</th>
-                            <th style="padding: 8px;">Status</th>
+                            <th style="padding-right: 2rem;">Kursname</th>
+                            <th style="padding-right: 2rem;">Bezeichnung</th>
+                            <th style="padding-right: 2rem;">mind. Reitlevel</th>
+                            <th style="padding-right: 2rem;">Kosten</th>
+                            <th style="padding-right: 2rem;">Datum</th>
+                            <th style="padding-right: 2rem;">Uhrzeit</th>
+                            <th style="padding-right: 2rem;">Dauer</th>
+                            <th style="padding-right: 2rem;">Ort</th>
+                            <th style="padding-right: 2rem;">max. Teilnehmeranzahl</th>
+                            <th style="padding-right: 2rem;">Reitlehrer</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="5" style="padding: 8px; font-style: italic; color: #777; text-align: center;">Noch keine Kurse gebucht.</td>
+                            <td colspan="10" style="padding: 8px; font-style: italic; color: #777; text-align: center;">Noch keine Kurse gebucht.</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div style="margin-top: 2rem;">
-                    <a href="kurse.html" class="btn">Neuen Kurs buchen</a>
-                </div>
 
                 <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
                     <strong>Info:</strong>
@@ -207,15 +89,16 @@
                 <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
                     <thead>
                         <tr style="background-color: #f0e4d7;">
-                            <th style="padding: 8px;">Titel</th>
+                            <th style="padding: 8px;">Termin</th>
                             <th style="padding: 8px;">Datum</th>
-                            <th style="padding: 8px;">Uhrzeit</th>
-                            <th style="padding: 8px;">Bewertung</th>
+                            <th style="padding: 8px;">Reitlehrer</th>
+                            <th style="padding: 8px;">Sterne</th>
+                            <th style="padding: 8px;">Kommentar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="4" style="padding: 8px; font-style: italic; color: #777; text-align: center;">Noch keine Bewertungen vorhanden.</td>
+                            <td colspan="5" style="padding: 8px; font-style: italic; color: #777; text-align: center;">Noch keine Bewertungen vorhanden.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -232,8 +115,9 @@
             <!--Kalender -->
             <div id="kalender" class="section">
                 <h1>Kalender</h1>
+                <br />
                 <p>Hier siehst du die kommenden Kurse und Termine.</p>
-
+                <br />
                 <!-- Juli 2025-->
                 <div class="kalender-header">
                     <h2>Juli 2025</h2>
@@ -370,9 +254,9 @@
 
 
 
-     
 
-          
+
+
             <!-- Buchungsansicht für Schüler:innen -->
             <div id="buchung" class="section">
                 <h1>Kurse buchen</h1>
@@ -380,21 +264,27 @@
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-                    <a href="#" class="btn">Bearbeiten</a>
-                    <a href="#" class="btn">Löschen</a>
+                    <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                 </div>
 
                 <table style="min-width: 100%; border-spacing: 0 0.5rem;">
                     <thead>
                         <tr style="text-align: left;">
                             <th style="padding-right: 3rem;">Kursname</th>
+                            <th style="padding-right: 3rem;">Bezeichnung</th>
+                            <th style="padding-right: 3rem;">mind. Reitlevel</th>
+                            <th style="padding-right: 3rem;">Kosten</th>
                             <th style="padding-right: 3rem;">Datum</th>
-                            <th style="padding-right: 3rem;">Status</th>
+                            <th style="padding-right: 3rem;">Úhrzeit</th>
+                            <th style="padding-right: 3rem;">Dauer</th>
+                            <th style="padding-right: 3rem;">Ort</th>
+                            <th style="padding-right: 3rem;">max. Teilnehmeranzahl</th>
+                            <th style="padding-right: 3rem;">Reitlehrer</th>
                         </tr>
                     </thead>
                     <tbody id="buchungsTabelle">
                         <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse gebucht.</td>
+                            <td colspan="10" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse gebucht.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -423,6 +313,86 @@
                     </div>
                 </form>
             </div>
+
+
+
+
+
+
+            <!-- Profil-Button (rund, rechts oben) -->
+            <div class="profil-wrapper">
+                <div id="profilButton" onclick="showSection('profil')">
+                    <img src="../img/icon.jpg" alt="Profilbild">
+                </div>
+
+            </div>
+
+            <section class="section" id="profil">
+                <h1>Mein Profil</h1>
+                <br />
+                <form class="form-card">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="z. B. Max" />
+
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" id="nachname" name="nachname" placeholder="z. B. Mustermann" />
+
+                    <label for="geburtstag">Geburtsdatum:</label>
+                    <input type="date" id="geburtstag" name="geburtstag" />
+
+                    <label for="telefon">Telefonnummer:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+43 ..." />
+
+                    <label for="alter">Alter:</label>
+                    <input type="number" id="alter" name="alter" min="4" max="99" placeholder="z. B. 12" />
+
+                    <label for="groesse">Größe (in cm):</label>
+                    <input type="number" id="groesse" name="groesse" placeholder="z. B. 145" />
+
+                    <label for="gewicht">Gewicht (in kg):</label>
+                    <input type="number" id="gewicht" name="gewicht" placeholder="z. B. 38" />
+
+                    <label for="reitlevel">Reitlevel:</label>
+                    <select id="reitlevel" name="reitlevel">
+                        <option value="">Bitte wählen</option>
+                        <option value="Anfänger">Anfänger</option>
+                        <option value="Anfänger plus">Anfänger plus</option>
+                        <option value="Fortgeschritten">Fortgeschritten</option>
+                        <option value="Fortgeschritten plus">Fortgeschritten plus</option>
+                        <option value="Profi">Profi</option>
+                        <option value="Profi plus">Profi plus</option>
+                    </select>
+
+                    <div class="profil-btns">
+                        <button type="submit" class="btn">Speichern</button>
+                        <button type="button" class="btn btn-zurueck" onclick="showSection('dashboard')">Zurück</button>
+                    </div>
+                </form>
+            </section>
+
+
+
+            <script>
+                function toggleProfilDropdown() {
+                    const dropdown = document.getElementById("profilDropdown");
+                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                }
+
+                // Schließen, wenn außerhalb geklickt wird
+                document.addEventListener("click", function (event) {
+                    const button = document.getElementById("profilButton");
+                    const dropdown = document.getElementById("profilDropdown");
+                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.style.display = "none";
+                    }
+                });
+            </script>
+
+
+
+
+
+
 
 
             <script>

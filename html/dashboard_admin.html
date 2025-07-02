@@ -5,96 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentehof Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Georgia, serif;
-            background-color: #f6e9d7;
-        }
-
-        header {
-            background-color: #a7794e;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        nav {
-            background-color: #a7794e;
-            text-align: center;
-            padding: 0.5rem 0 1rem;
-        }
-
-            nav a {
-                color: white;
-                margin: 0 1rem;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-        .layout {
-            display: flex;
-            height: calc(100vh - 140px);
-        }
-
-        .sidebar {
-            width: 220px;
-            background-color: #e9dac3;
-            padding: 2rem 1rem;
-            border-right: 2px solid #d0c4b0;
-        }
-
-            .sidebar ul {
-                list-style: none;
-            }
-
-            .sidebar li {
-                margin-bottom: 1.2rem;
-            }
-
-            .sidebar a {
-                color: #3e2e1e;
-                font-weight: bold;
-                text-decoration: none;
-            }
-
-                .sidebar a:hover {
-                    color: #a6753d;
-                }
-
-        .main {
-            flex-grow: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .section {
-            display: none;
-        }
-
-            .section.active {
-                display: block;
-            }
-
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
+   
 </head>
 
 <body>
 
     <header>
-        Willkommen im Mentehof
+        Willkommen am Mentehof
     </header>
 
     <nav>
-        <a href="index.html">Startseite</a>
         <a href="#" onclick="logout()">Logout</a>
     </nav>
 
@@ -103,9 +24,8 @@
             <ul id="nav">
                 <li><a href="#" onclick="showSection('dashboard')">Dashboard Admin</a></li>
                 <li><a href="#" onclick="showSection('kalender')">Kalender</a></li>
-                <li><a href="#" onclick="showSection('teilnehmer')">Teilnehmer</a></li>
-                <li><a href="#" onclick="showSection('kurse')">Kurse verwalten</a></li>
-                <li><a href="#" onclick="showSection('benutzer')">Benutzer</a></li>
+                <li><a href="#" onclick="showSection('personen')">Personen Übersicht</a></li>
+                <li><a href="#" onclick="showSection('termin')">Termine verwalten</a></li>
             </ul>
         </aside>
 
@@ -128,359 +48,354 @@
             </div>
 
 
-                <!--Kalender -->
-                <div id="kalender" class="section">
-                    <h1>Kalender</h1>
-                    <p>Hier siehst du die kommenden Kurse und Termine.</p>
+            <!--Kalender -->
+            <div id="kalender" class="section">
+                <h1>Kalender</h1>
+                <p>Hier siehst du die kommenden Kurse und Termine.</p>
 
-                    <!-- Juli 2025-->
-                    <div class="kalender-header">
-                        <h2>Juli 2025</h2>
+                <!-- Juli 2025-->
+                <div class="kalender-header">
+                    <h2>Juli 2025</h2>
+                </div>
+
+                <!-- Kalender als große Tabelle -->
+                <table class="kalender-tabelle">
+                    <thead>
+                        <tr>
+                            <th>Mo</th>
+                            <th>Di</th>
+                            <th>Mi</th>
+                            <th>Do</th>
+                            <th>Fr</th>
+                            <th>Sa</th>
+                            <th>So</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><div class="kalender-tag">1</div></td>
+                            <td><div class="kalender-tag">2</div></td>
+                            <td><div class="kalender-tag">3</div></td>
+                            <td><div class="kalender-tag">4</div></td>
+                            <td><div class="kalender-tag">5</div></td>
+                            <td><div class="kalender-tag">6</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">7</div></td>
+                            <td><div class="kalender-tag">8</div></td>
+                            <td><div class="kalender-tag">9</div></td>
+                            <td><div class="kalender-tag">10</div></td>
+                            <td><div class="kalender-tag">11</div></td>
+                            <td><div class="kalender-tag">12</div></td>
+                            <td><div class="kalender-tag">13</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">14</div></td>
+                            <td><div class="kalender-tag">15</div></td>
+                            <td><div class="kalender-tag">16</div></td>
+                            <td><div class="kalender-tag">17</div></td>
+                            <td><div class="kalender-tag">18</div></td>
+                            <td><div class="kalender-tag">19</div></td>
+                            <td><div class="kalender-tag">20</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">21</div></td>
+                            <td><div class="kalender-tag">22</div></td>
+                            <td><div class="kalender-tag">23</div></td>
+                            <td><div class="kalender-tag">24</div></td>
+                            <td><div class="kalender-tag">25</div></td>
+                            <td><div class="kalender-tag">26</div></td>
+                            <td><div class="kalender-tag">27</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">28</div></td>
+                            <td><div class="kalender-tag">29</div></td>
+                            <td><div class="kalender-tag">30</div></td>
+                            <td><div class="kalender-tag">31</div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- August 2025 -->
+                <div class="kalender-header" style="margin-top: 3rem;">
+                    <h2>August 2025</h2>
+                </div>
+
+                <table class="kalender-tabelle">
+                    <thead>
+                        <tr>
+                            <th>Mo</th>
+                            <th>Di</th>
+                            <th>Mi</th>
+                            <th>Do</th>
+                            <th>Fr</th>
+                            <th>Sa</th>
+                            <th>So</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="kalender-tag">1</div></td>
+                            <td><div class="kalender-tag">2</div></td>
+                            <td><div class="kalender-tag">3</div></td>
+                            <td><div class="kalender-tag">4</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">5</div></td>
+                            <td><div class="kalender-tag">6</div></td>
+                            <td><div class="kalender-tag">7</div></td>
+                            <td><div class="kalender-tag">8</div></td>
+                            <td><div class="kalender-tag">9</div></td>
+                            <td><div class="kalender-tag">10</div></td>
+                            <td><div class="kalender-tag">11</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">12</div></td>
+                            <td><div class="kalender-tag">13</div></td>
+                            <td><div class="kalender-tag">14</div></td>
+                            <td><div class="kalender-tag">15</div></td>
+                            <td><div class="kalender-tag">16</div></td>
+                            <td><div class="kalender-tag">17</div></td>
+                            <td><div class="kalender-tag">18</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">19</div></td>
+                            <td><div class="kalender-tag">20</div></td>
+                            <td><div class="kalender-tag">21</div></td>
+                            <td><div class="kalender-tag">22</div></td>
+                            <td><div class="kalender-tag">23</div></td>
+                            <td><div class="kalender-tag">24</div></td>
+                            <td><div class="kalender-tag">25</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="kalender-tag">26</div></td>
+                            <td><div class="kalender-tag">27</div></td>
+                            <td><div class="kalender-tag">28</div></td>
+                            <td><div class="kalender-tag">29</div></td>
+                            <td><div class="kalender-tag">30</div></td>
+                            <td><div class="kalender-tag">31</div></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+            <!-- Teilnehmerliste -->
+            <div id="personen" class="section">
+                <h1>Personenliste</h1>
+                <br />
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="register.html" class="btn">+ Neue Person anlegen</a>
+                    <div>
+                        <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                     </div>
+                </div>
 
-                    <!-- Kalender als große Tabelle -->
-                    <table class="kalender-tabelle">
-                        <thead>
-                            <tr>
-                                <th>Mo</th>
-                                <th>Di</th>
-                                <th>Mi</th>
-                                <th>Do</th>
-                                <th>Fr</th>
-                                <th>Sa</th>
-                                <th>So</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td><div class="kalender-tag">1</div></td>
-                                <td><div class="kalender-tag">2</div></td>
-                                <td><div class="kalender-tag">3</div></td>
-                                <td><div class="kalender-tag">4</div></td>
-                                <td><div class="kalender-tag">5</div></td>
-                                <td><div class="kalender-tag">6</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">7</div></td>
-                                <td><div class="kalender-tag">8</div></td>
-                                <td><div class="kalender-tag">9</div></td>
-                                <td><div class="kalender-tag">10</div></td>
-                                <td><div class="kalender-tag">11</div></td>
-                                <td><div class="kalender-tag">12</div></td>
-                                <td><div class="kalender-tag">13</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">14</div></td>
-                                <td><div class="kalender-tag">15</div></td>
-                                <td><div class="kalender-tag">16</div></td>
-                                <td><div class="kalender-tag">17</div></td>
-                                <td><div class="kalender-tag">18</div></td>
-                                <td><div class="kalender-tag">19</div></td>
-                                <td><div class="kalender-tag">20</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">21</div></td>
-                                <td><div class="kalender-tag">22</div></td>
-                                <td><div class="kalender-tag">23</div></td>
-                                <td><div class="kalender-tag">24</div></td>
-                                <td><div class="kalender-tag">25</div></td>
-                                <td><div class="kalender-tag">26</div></td>
-                                <td><div class="kalender-tag">27</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">28</div></td>
-                                <td><div class="kalender-tag">29</div></td>
-                                <td><div class="kalender-tag">30</div></td>
-                                <td><div class="kalender-tag">31</div></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- August 2025 -->
-                    <div class="kalender-header" style="margin-top: 3rem;">
-                        <h2>August 2025</h2>
+                <table style="min-width: 100%; border-spacing: 0 0.5rem;">
+                    <thead>
+                        <tr style="text-align: left;">
+                            <th style="padding-right: 3rem;">Vorname </th>
+                            <th style="padding-right: 3rem;">Nachname</th>
+                            <th style="padding-right: 3rem;">Rolle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Teilnehmerdaten werden hier dynamisch ergänzt -->
+                        <tr style="height: 3rem; background-color: #fff7ef;">
+                            <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Personen eingetragen.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <!--Termine-->
+            <div id="termin" class="section">
+                <h1>Termine verwalten</h1>
+                <br />
+                <p>Alle geplanten Kurse im Überblick. </p>
+                <br />
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="#" class="btn" onclick="openKursModal(event)">+ Neuer Kurs</a>
+                    <div>
+                        <a href="#" class="btn">Bearbeiten</a>
+                        <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                     </div>
-
-                    <table class="kalender-tabelle">
-                        <thead>
-                            <tr>
-                                <th>Mo</th>
-                                <th>Di</th>
-                                <th>Mi</th>
-                                <th>Do</th>
-                                <th>Fr</th>
-                                <th>Sa</th>
-                                <th>So</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="kalender-tag">1</div></td>
-                                <td><div class="kalender-tag">2</div></td>
-                                <td><div class="kalender-tag">3</div></td>
-                                <td><div class="kalender-tag">4</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">5</div></td>
-                                <td><div class="kalender-tag">6</div></td>
-                                <td><div class="kalender-tag">7</div></td>
-                                <td><div class="kalender-tag">8</div></td>
-                                <td><div class="kalender-tag">9</div></td>
-                                <td><div class="kalender-tag">10</div></td>
-                                <td><div class="kalender-tag">11</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">12</div></td>
-                                <td><div class="kalender-tag">13</div></td>
-                                <td><div class="kalender-tag">14</div></td>
-                                <td><div class="kalender-tag">15</div></td>
-                                <td><div class="kalender-tag">16</div></td>
-                                <td><div class="kalender-tag">17</div></td>
-                                <td><div class="kalender-tag">18</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">19</div></td>
-                                <td><div class="kalender-tag">20</div></td>
-                                <td><div class="kalender-tag">21</div></td>
-                                <td><div class="kalender-tag">22</div></td>
-                                <td><div class="kalender-tag">23</div></td>
-                                <td><div class="kalender-tag">24</div></td>
-                                <td><div class="kalender-tag">25</div></td>
-                            </tr>
-                            <tr>
-                                <td><div class="kalender-tag">26</div></td>
-                                <td><div class="kalender-tag">27</div></td>
-                                <td><div class="kalender-tag">28</div></td>
-                                <td><div class="kalender-tag">29</div></td>
-                                <td><div class="kalender-tag">30</div></td>
-                                <td><div class="kalender-tag">31</div></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
                 </div>
 
+                <table style="min-width: 100%; border-spacing: 0 0.5rem;">
+                    <thead>
+                        <tr style="text-align: left;">
+                            <th style="padding-right: 2rem;">Kursname</th>
+                            <th style="padding-right: 2rem;">Bezeichnung</th>
+                            <th style="padding-right: 2rem;">mind. Reitlevel</th>
+                            <th style="padding-right: 2rem;">Kosten</th>
+                            <th style="padding-right: 2rem;">Datum</th>
+                            <th style="padding-right: 2rem;">Uhrzeit</th>
+                            <th style="padding-right: 2rem;">Dauer</th>
+                            <th style="padding-right: 2rem;">Ort</th>
+                            <th style="padding-right: 2rem;">max. Teilnehmeranzahl</th>
+                            <th style="padding-right: 2rem;">Reitlehrer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height: 3rem; background-color: #fff7ef;">
+                            <td colspan="10" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse eingetragen.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+            <!-- neuen Kurs hinzufügen -->
+            <div id="kursModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 600px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
+                <h2>Neuen Kurs anlegen</h2>
+                <form id="kursForm">
+                    <br />
 
-                <!-- Teilnehmerliste -->
-                <div id="teilnehmer" class="section">
-                    <h1>Teilnehmerliste</h1>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <a href="register.html" class="btn">+ Neuer Teilnehmer</a>
-                        <div>
-                            <a href="#" class="btn">Bearbeiten</a>
-                            <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
-                        </div>
+                    <label for="kursname">Kursname:</label>
+                    <input type="text" id="kursname" name="kursname" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="bezeichnung">Bezeichnung:</label>
+                    <input type="text" id="bezeichnung" name="bezeichnung" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="reitlevel">Min.Reitlevel:</label>
+                    <input type="text" id="reitlevel" name="reitlevel" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="kosten">Kosten:</label>
+                    <input type="number" id="kosten" name="kosten" step="0.01" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="datum">Datum:</label>
+                    <input type="date" id="datum" name="datum" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="zeit">Uhrzeit:</label>
+                    <input type="time" id="zeit" name="zeit" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="dauer">Dauer (in Minuten):</label>
+                    <input type="number" id="dauer" name="dauer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="ort">Ort:</label>
+                    <input type="text" id="ort" name="ort" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="max">Maximale Teilnehmeranzahl:</label>
+                    <input type="number" id="max" name="max" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <label for="reitlehrer">Reitlehrer:</label>
+                    <input type="text" id="reitlehrer" name="reitlehrer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+                        <button type="button" onclick="closeKursModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
+                        <button type="submit" class="btn">Speichern</button>
                     </div>
+                </form>
+            </div>
 
-                    <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                        <thead>
-                            <tr style="text-align: left;">
-                                <th style="padding-right: 3rem;">Name</th>
-                                <th style="padding-right: 3rem;">Alter</th>
-                                <th style="padding-right: 3rem;">Reitlevel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Teilnehmerdaten werden hier dynamisch ergänzt -->
-                            <tr style="height: 3rem; background-color: #fff7ef;">
-                                <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Teilnehmer eingetragen.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <script>
+                function openKursModal(e) {
+                    e.preventDefault();
+                    document.getElementById("kursModal").style.display = "block";
+                }
+
+                function closeKursModal() {
+                    document.getElementById("kursModal").style.display = "none";
+                }
+            </script>
+
+
+            <!-- Profil-Button (rund, rechts oben) -->
+            <div class="profil-wrapper">
+                <div id="profilButton" onclick="showSection('profil')">
+                    <img src="../img/icon.jpg" alt="Profilbild">
                 </div>
 
-                <!--Kurs-->
-                <div id="kurse" class="section">
-                    <h1>Kurse verwalten</h1>
-                    <p>Alle geplanten Kurse im Überblick. (sichtbar für Reitlehrer und Admin)</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <a href="#" class="btn" onclick="openKursModal(event)">+ Neuer Kurs</a>
-                        <div>
-                            <a href="#" class="btn">Bearbeiten</a>
-                            <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
-                        </div>
+            </div>
+
+            <section class="section" id="profil">
+                <h1>Mein Profil</h1>
+                <br />
+                <form class="form-card">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="z. B. Max" />
+
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" id="nachname" name="nachname" placeholder="z. B. Mustermann" />
+
+                    <label for="telefon">Telefonnummer:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+43 ..." />
+
+                    <div class="profil-btns">
+                        <button type="submit" class="btn">Speichern</button>
+                        <button type="button" class="btn btn-zurueck" onclick="showSection('dashboard')">Zurück</button>
                     </div>
+                </form>
+            </section>
 
-                    <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                        <thead>
-                            <tr style="text-align: left;">
-                                <th style="padding-right: 2rem;">Kursname</th>
-                                <th style="padding-right: 2rem;">Datum</th>
-                                <th style="padding-right: 2rem;">Teilnehmer</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="height: 3rem; background-color: #fff7ef;">
-                                <td colspan="3" style="font-style: italic; color: #777; text-align: center;">Noch keine Kurse eingetragen.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
 
-                <!-- neuen Kurs hinzufügen -->
-                <div id="kursModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                    <h2>Neuen Kurs anlegen</h2>
-                    <form id="kursForm">
-                        <label for="kursname">Kursname:</label>
-                        <input type="text" id="kursname" name="kursname" required style="width: 100%; margin-bottom: 1rem;">
+            <script>
+                function toggleProfilDropdown() {
+                    const dropdown = document.getElementById("profilDropdown");
+                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                }
 
-                        <label for="datum">Datum:</label>
-                        <input type="date" id="datum" name="datum" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="zeit">Uhrzeit:</label>
-                        <input type="time" id="zeit" name="zeit" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="beschreibung">Beschreibung:</label>
-                        <textarea id="beschreibung" name="beschreibung" rows="3" style="width: 100%; margin-bottom: 1rem;"></textarea>
-
-                        <label for="max">Maximale Teilnehmer:</label>
-                        <input type="number" id="max" name="max" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                            <button type="button" onclick="closeKursModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                            <button type="submit" class="btn">Speichern</button>
-                        </div>
-                    </form>
-                </div>
-
-                <script>
-                    function openKursModal(e) {
-                        e.preventDefault();
-                        document.getElementById("kursModal").style.display = "block";
+                // Schließen, wenn außerhalb geklickt wird
+                document.addEventListener("click", function (event) {
+                    const button = document.getElementById("profilButton");
+                    const dropdown = document.getElementById("profilDropdown");
+                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.style.display = "none";
                     }
+                });
+            </script>
 
-                    function closeKursModal() {
-                        document.getElementById("kursModal").style.display = "none";
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const neuerBenutzerBtn = document.querySelector("#benutzer .btn");
+                    if (neuerBenutzerBtn) {
+                        neuerBenutzerBtn.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            document.getElementById("benutzerModal").style.display = "block";
+                        });
                     }
-                </script>
+                });
 
+                function closeBenutzerModal() {
+                    document.getElementById("benutzerModal").style.display = "none";
+                }
+            </script>
 
-                <!--Benutzer-->
-                <div id="benutzer" class="section">
-                    <h1>Benutzerverwaltung</h1>
-                    <p>Nur für Admins sichtbar.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <a href="#" class="btn">+ Neuer Benutzer</a>
-                        <div>
-                            <a href="#" class="btn">Bearbeiten</a>
-                            <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
-                        </div>
-                    </div>
+            <script>
+                const rolle = localStorage.getItem("rolle") || "Schueler";
 
-                    <table style="min-width: 100%; border-spacing: 0 0.5rem;">
-                        <thead>
-                            <tr style="text-align: left;">
-                                <th style="padding-right: 2rem;">Name</th>
-                                <th style="padding-right: 2rem;">E-Mail</th>
-                                <th style="padding-right: 2rem;">Rolle</th>
-                                <th style="padding-right: 2rem;">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="height: 3rem; background-color: #fff7ef;">
-                                <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Benutzer eingetragen.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                function showSection(id) {
+                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+                    document.getElementById(id).classList.add('active');
+                }
 
-                <!-- Benutzer neu hinzufügen -->
-                <div id="benutzerModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 500px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                    <h2>Neuen Benutzer anlegen</h2>
-                    <form id="benutzerForm">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="email">E-Mail:</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="phone">Telefonnummer:</label>
-                        <input type="tel" id="phone" name="phone" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="age">Alter:</label>
-                        <input type="number" id="age" name="age" min="4" max="99" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="height">Größe (cm):</label>
-                        <input type="number" id="height" name="height" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="weight">Gewicht (kg):</label>
-                        <input type="number" id="weight" name="weight" required style="width: 100%; margin-bottom: 1rem;">
-
-                        <label for="level">Reitlevel:</label>
-                        <select id="level" name="level" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                            <option value="">Bitte auswählen</option>
-                            <option value="Anfänger">Anfänger</option>
-                            <option value="Fortgeschritten">Fortgeschritten</option>
-                            <option value="Profi">Profi</option>
-                        </select>
-
-                        <label for="rolle">Rolle:</label>
-                        <select id="rolle" name="rolle" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                            <option value="Schüler">Schüler</option>
-                            <option value="Reitlehrer">Reitlehrer</option>
-                            <option value="Admin">Admin</option>
-                        </select>
-
-                        <label for="status">Status:</label>
-                        <select id="status" name="status" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                            <option value="Aktiv">Aktiv</option>
-                            <option value="Inaktiv">Inaktiv</option>
-                        </select>
-
-                        <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                            <button type="button" onclick="closeBenutzerModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                            <button type="submit" class="btn">Speichern</button>
-                        </div>
-                    </form>
-                </div>
-
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const neuerBenutzerBtn = document.querySelector("#benutzer .btn");
-                        if (neuerBenutzerBtn) {
-                            neuerBenutzerBtn.addEventListener("click", function (e) {
-                                e.preventDefault();
-                                document.getElementById("benutzerModal").style.display = "block";
-                            });
-                        }
-                    });
-
-                    function closeBenutzerModal() {
-                        document.getElementById("benutzerModal").style.display = "none";
-                    }
-                </script>
-
-                <script>
-                    const rolle = localStorage.getItem("rolle") || "Schueler";
-
-                    function showSection(id) {
-                        document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-                        document.getElementById(id).classList.add('active');
-                    }
-
-                    function logout() {
-                        localStorage.removeItem("rolle");
-                        window.location.href = "login.html";
-                    }
-                </script>
+                function logout() {
+                    localStorage.removeItem("rolle");
+                    window.location.href = "login.html";
+                }
+            </script>
 
 
 
 
 
 
-   
 
-<script src="js/admin.js"></script>
+
+            <script src="js/admin.js"></script>
 
 </body>
 

@@ -4,34 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mentehof Kursbuchung</title>
-    <link rel="stylesheet" href="../css/style.css">
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background: url('../img/holz.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #3e2c1c;
+        }
+
+        header {
+            background-color: #a7794e;
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 160px;
+            height: auto;
+        }
+        .login-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            text-decoration: none;
+        }
+
+            .login-text:hover {
+                text-decoration: underline;
+            }
+
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 150px);
+        }
+
+        .hero {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem 3rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+            .hero h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+        .btn {
+            background-color: #a6753d;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .btn:hover {
+                background-color: #8b5e33;
+            }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="../img/logo.jpg" alt="Mentehof Logo" class="logo" />
-      
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="#">Kurse</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <img src="../img/logo.jpg" alt="Mentehof Logo" class="logo" />
+        <a href="login.html" class="login-text">Login</a>
 
-  <main>
-    <section class="hero">
-      <div class="overlay">
-        <h2>Willkommen am Mentehof</h2>
-        <p>Reitspaß & Natur erleben – jetzt Platz sichern!</p>
-        <a href="register.html" class="btn">Buche jetzt</a>
-      </div>
-    </section>
-  </main>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Willkommen am Mentehof</h2>
+            <p>Reitspaß & Natur erleben – jetzt Platz sichern!</p>
+            <a href="register.html" class="btn">Buche jetzt</a>
+        </section>
+    </main>
 
 </body>
 </html>

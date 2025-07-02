@@ -1,89 +1,171 @@
-/* Grundlayout */
-body {
+/* ===================== GRUNDLAYOUT ===================== */
+* {
     margin: 0;
-    font-family: 'Georgia', serif;
-    color: #3e2c1c;
-    background-color: #f4e8d4;
-}
-
-/* Header mit Logo */
-header {
-    background-color: #a97c50;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo {
-    height: 60px;
-    width: auto;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin-top: 10px;
     padding: 0;
+    box-sizing: border-box;
 }
 
-nav a {
+body {
+    font-family: Georgia, serif;
+    background-color: #f6e9d7;
+    color: #3e2c1c;
+}
+
+/* ===================== HEADER & NAVIGATION ===================== */
+header {
+    background-color: #a7794e;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Hero-Abschnitt mit Holz-Hintergrund */
-.hero {
-    position: relative;
-    height: 80vh;
-    background: url('../img/holz.jpg') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
 }
 
-.overlay {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 10px;
+nav {
+    background-color: #a7794e;
+    text-align: center;
+    padding: 0.5rem 0 1rem;
 }
 
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    nav a {
+        color: white;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+/* ===================== PROFIL-BUTTON & DROPDOWN ===================== */
+#profilButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-.hero p {
-    font-size: 18px;
+    #profilButton img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+#profilDropdown {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    min-width: 220px;
 }
 
-/* Button */
+    #profilDropdown p {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+/* ===================== LAYOUT ===================== */
+.layout {
+    display: flex;
+    height: calc(100vh - 140px);
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #e9dac3;
+    padding: 2rem 1rem;
+    border-right: 2px solid #d0c4b0;
+}
+
+    .sidebar ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .sidebar li {
+        margin-bottom: 1.2rem;
+    }
+
+    .sidebar a {
+        color: #3e2e1e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .sidebar a:hover {
+            color: #a6753d;
+        }
+
+.main {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* ===================== SECTIONS ===================== */
+.section {
+    display: none;
+}
+
+    .section.active {
+        display: block;
+    }
+
+/* ===================== TABELLEN ===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #f0e4d7;
+}
+
+/* ===================== BUTTONS ===================== */
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #6b4f2d;
+    background-color: #a6753d;
     color: white;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    display: inline-block;
 }
 
     .btn:hover {
-        background-color: #4c2e14;
+        background-color: #8b5e33;
     }
 
-/* Formular-Design */
+/* ===================== FORMULARE ===================== */
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 5rem;
+}
+
 .form-card {
     background-color: rgba(255, 255, 255, 0.95);
     max-width: 500px;
@@ -99,32 +181,12 @@ nav a {
         font-weight: bold;
     }
 
-    .form-card input,
-    .form-card select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
     .form-card .btn {
         margin-top: 20px;
-        background-color: #6b4f2d;
-        color: white;
-        border: none;
-        padding: 12px;
-        border-radius: 5px;
-        cursor: pointer;
         width: 100%;
     }
 
-        .form-card .btn:hover {
-            background-color: #4c2e14;
-        }
-
-
+/* ===================== SONDERSEITEN ===================== */
 body.forget-password {
     font-family: sans-serif;
     background: #f4f4f4;
@@ -134,22 +196,13 @@ body.forget-password {
     height: 100vh;
 }
 
-
 .container {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-}
-
-input {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 1rem 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 button {
@@ -170,7 +223,7 @@ button {
     color: green;
 }
 
-
+/* ===================== BEWERTUNGSBALKEN ===================== */
 .bewertung-balken {
     width: 100px;
     height: 20px;
@@ -188,3 +241,110 @@ button {
     font-size: 0.9rem;
     border-radius: 5px 0 0 5px;
 }
+
+
+
+/* ===================== Profil-Button (oben rechts) ===================== */
+.profil-wrapper {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Runder Button */
+#profilButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+    #profilButton img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* Text darunter */
+.profil-label {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Dropdown */
+#profilDropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    min-width: 220px;
+    z-index: 1000;
+}
+
+    #profilDropdown p {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+.profil-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+/* Gemeinsames Styling für beide Buttons */
+.btn,
+.btn-zurueck {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+/* Speichern-Button */
+.btn {
+    background-color: #a6753d;
+    color: white;
+}
+
+    .btn:hover {
+        background-color: #8b5e33;
+    }
+
+/* Zurück-Button */
+.btn-zurueck {
+    background-color: #ccc;
+    color: #333;
+}
+
+    .btn-zurueck:hover {
+        background-color: #bbb;
+    }
+
+
+
