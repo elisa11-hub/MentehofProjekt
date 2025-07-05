@@ -1,11 +1,11 @@
 <?php
 
 if (empty($_POST["Vorname"])) {
-    die("Vorname is required");
+    die("Firstname is required");
 }
 
 if (empty($_POST["Nachname"])) {
-    die("Nachname is required");
+    die("Lastname is required");
 }
 
 if (strlen($_POST["Passwort"]) < 8) {
@@ -22,7 +22,7 @@ if ( ! preg_match("/[0-9]/", $_POST["Passwort"])) {
 
 
 if (!preg_match("/[!@#$%^&*(),.?\":{}|<>_\-+=~`]/", $_POST["Passwort"])) {
-    die("Das Passwort muss mindestens ein Sonderzeichen enthalten.");
+    die("Password must contain at least on special character");
 }
 
 
@@ -36,60 +36,49 @@ if ($_POST["Passwort"] !== $_POST["password_confirmation"]) {
 $mysqli = require __DIR__ . "/database.php";
 
 // Passwort sicher hashen
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$password_hash = password_hash($_POST["passwort"], PASSWORD_DEFAULT);
 
 // Formulardaten erfassen (mit Fallback für leere Werte)
 $vorname = $_POST["vorname"] ?? null;
 $nachname = $_POST["nachname"] ?? null;
 $geburtsdatum = $_POST["geburtsdatum"] ?? null;
 $email = $_POST["email"] ?? null;
-$telefon = $_POST["phone"] ?? null;
-$alter = $_POST["age"] ?? null;
-$gewicht = $_POST["weight"] ?? null;
-$groesse = $_POST["height"] ?? null;
+$telefon = $_POST["telefonnummer"] ?? null;
+$gewicht = $_POST["koerpergewicht"] ?? null;
+$groesse = $_POST["koerpergroesse"] ?? null;
 $reitlevel = $_POST["level"] ?? null;
 
-// === Schritt 1: Person einfügen ===
-$sql_person = "INSERT INTO Person (Vorname, Nachname, Telefonnummer) VALUES (?, ?, ?)";
-$stmt = $mysqli->prepare($sql_person);
-if (!$stmt) die("SQL error (Person): " . $mysqli->error);
-$stmt->bind_param("sss", $vorname, $nachname, $telefon);
-$stmt->execute();
-$person_id = $stmt->insert_id;
-
-// === Schritt 2: Nutzer einfügen ===
-$sql_nutzer = "INSERT INTO Nutzer (Geburtsdatum, Alter, Gewicht, Groesse, Reitlevel, Person_idPerson)
-               VALUES (?, ?, ?, ?, ?, ?)";
-$stmt = $mysqli->prepare($sql_nutzer);
+// === Schritt 1: Nutzer einfügen ===
+$sql = "INSERT INTO Nutzer (email, passwort, rolle) VALUES (?, ?, 'Reitschüler')";
+$stmt = $mysqli->prepare($sql);
 if (!$stmt) die("SQL error (Nutzer): " . $mysqli->error);
-$stmt->bind_param("siiddi", $geburtsdatum, $alter, $gewicht, $groesse, $reitlevel, $person_id);
-$stmt->execute();
-$nutzer_id = $stmt->insert_id;
-
-// === Schritt 3: Authentifizierung einfügen ===
-$sql_auth = "INSERT INTO Authentifizierung (email, password_hash, Nutzer_idNutzer)
-             VALUES (?, ?, ?)";
-$stmt = $mysqli->prepare($sql_auth);
-if (!$stmt) die("SQL error (Auth): " . $mysqli->error);
-$stmt->bind_param("ssi", $email, $password_hash, $nutzer_id);
-
-// Ausführen und Ergebnis prüfen
-if ($stmt->execute()) {
-    header("Location: login.php");
-    exit;
-} else {
+$stmt->bind_param("ss", $email, $password_hash);
+if (!$stmt->execute()){
     if ($mysqli->errno === 1062) {
         die("Fehler: Diese E-Mail ist bereits registriert.");
     } else {
         die("SQL-Fehler bei Authentifizierung: " . $mysqli->error);
     }
 }
+$nutzer_id = $stmt->insert_id;
+
+// === Schritt 2: Reitschüler einfügen ===
+$sql = "INSERT INTO Reitschueler (idreitschueler, vorname, nachname, geburtsdatum, telefonnummer, koerpergewicht, koerpergroesse)
+               VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $mysqli->prepare($sql);
+if (!$stmt) die("SQL error (Nutzer): " . $mysqli->error);
+$stmt->bind_param("issssdd", $nutzer_id,$vorname, $nachname, $geburtsdatum, $telefonnummer, $koerpergewicht, $koerpergroesse);
+$stmt->execute();
+
+// === Schritt 3: Aktuelles Reitlevel zuweisen ===
+$sql = "INSERT INTO Aktuelles_Reitlevel (idreitlevel, idschueler) VALUES (?, ?)";
+$stmt = $mysqli->prepare($sql);
+if (!$stmt) die("SQL error (Reitlevel): " . $mysqli->error);
+$stmt->bind_param("ii", $reitlevel_id, $nutzer_id);
+$stmt->execute();
+
+// Weiterleitung zur Login-Seite
+ header("Location: login.php");
+exit;
 
 ?>
-
-
-
-
-
-
-
