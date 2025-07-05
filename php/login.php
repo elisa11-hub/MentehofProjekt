@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $result->fetch_assoc();
 
     // Passwort prüfen
-    if ($user && password_verify($_POST["password"], $user["passwort"])) {
+    if ($user && password_verify($_POST["password"], $user["password_hash"])) {
         session_regenerate_id();
         $_SESSION["nutzer_id"] = $user["idnutzer"];
         $_SESSION["rolle"] = $user["role"];
