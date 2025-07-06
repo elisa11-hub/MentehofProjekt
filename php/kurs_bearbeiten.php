@@ -55,3 +55,4 @@ $stmt->bind_param($types, ...$params);
 $stmt->execute();
 
 echo json_encode(['status'=>'success','msg'=>'Kurs aktualisiert']);
+?>

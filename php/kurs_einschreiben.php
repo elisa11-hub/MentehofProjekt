@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json');
 $input = json_decode(file_get_contents("php://input"), true);
+
 $nutzerId = $input['nutzerId'];
 $terminId = $input['terminId'];
 
@@ -33,7 +34,10 @@ $terminQuery->fetch();
 $terminQuery->close();
 
 // Prüfen ob schon gebucht
-$check = $conn->prepare("X");
+$check = $mysqli->prepare("
+    SELECT 1 FROM reitschueler_termin
+    WHERE termin_idtermin = ? AND reitschueler_idreitschueler = ?
+");
 $check->bind_param("ii", $terminId, $reitschuelerId);
 $check->execute();
 $result = $check->get_result();
@@ -60,4 +64,6 @@ $insert->bind_param("ii", $reitschuelerId, $terminId);
 $insert->execute();
 
 echo json_encode(["status" => "success", "msg" => "Erfolgreich eingeschrieben"]);
+
 $mysqli->close();
+?>

@@ -41,7 +41,11 @@ try {
 
     $mysqli->commit();
     echo json_encode(['status'=>'success','msg'=>'Kurs gelöscht']);
+
 } catch (Throwable $e) {
     $mysqli->rollback();
     echo json_encode(['status'=>'error','msg'=>'Fehler: '.$e->getMessage()]);
 }
+
+$mysqli->close();
+?>

@@ -1,10 +1,15 @@
 <?php
 $mysqli = require __DIR__ . "/database.php";
 
-$schueler_id = 1; // Beispiel
-
 $query = "
-X
+SELECT
+    t.name,
+    n.name AS trainer,
+    t.datum,
+    t.uhrzeit AS zeit,
+FROM termin t
+JOIN nutzer n ON t.reitlehrer_idreitlehrer = n.idnutzer
+ORDER BY t.datum, t.uhrzeit  
 ";
 
 $result = $conn->query($query);
