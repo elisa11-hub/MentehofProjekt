@@ -27,19 +27,35 @@ $rolle = $user["rolle"];
 // Bewertungen abhängig von Rolle
 switch ($rolle) {
     case "admin":
-        $sql = "SELECT * FROM bewertung";
+        // Admin kann alle Bewertungen sehen
+        $sql = "SELECT b.*, r.vorname, r.nachname 
+                FROM bewertung b 
+                JOIN reitschueler r ON b.reitschueler_idreitschueler = r.idreitschueler
+                ORDER BY b.datum DESC";
         $stmt = $mysqli->prepare($sql);
         break;
 
     case "lehrer":
-        $sql = "SELECT b.* FROM bewertung b
-                JOIN reitlehrer r ON b.reitlehrer_idreitlehrer = r.idreitlehrer
-                WHERE r.nutzer_idnutzer = ?";
+        // Reitlehrer kann Bewertungen von seinen Kursen sehen
+        $sql = "SELECT b.*, r.vorname, r.nachname 
+                FROM bewertung b 
+                JOIN reitschueler r ON b.reitschueler_idreitschueler = r.idreitschueler
+                JOIN reitlehrer rl ON b.reitlehrer_idreitlehrer = rl.idreitlehrer
+                WHERE rl.nutzer_idnutzer = ?
+                ORDER BY b.datum DESC";
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param("i", $nutzer_id);
         break;
 
     case "schueler":
+        // Schüler sehen ebenfalls alle
+                $sql = "SELECT b.*, r.vorname, r.nachname 
+                        FROM bewertung b 
+                        JOIN reitschueler r ON b.reitschueler_idreitschueler = r.idreitschueler
+                        ORDER BY b.datum DESC";
+                $stmt = $mysqli->prepare($sql);
+                break;
+
     default:
         echo json_encode([]);
         exit;
@@ -57,6 +73,7 @@ while ($row = $result->fetch_assoc()) {
         "sterne" => $row["sterne"],
         "kommentar" => $row["kommentar"],
         "datum" => $row["datum"]
+        "schueler_name"   => $row["vorname"] . " " . $row["nachname"]
     ];
 }
 

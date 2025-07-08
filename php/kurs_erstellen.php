@@ -2,9 +2,9 @@
 header('Content-Type: application/json');
 $input = json_decode(file_get_contents("php://input"), true);
 
-$rolle = $input['rolle'];
-$nutzerId = $input['nutzerId'];
-$daten = $input['termin']; // Array mit kursname, bezeichnung, datum, uhrzeit, dauer, kosten, max_teilnehmerzahl, min_reitlevel
+$rolle = $input['rolle'] ?? null;;
+$nutzerId = $input['nutzerId'] ?? null;;
+$daten = $input['termin'] ?? null;; // Array mit kursname, bezeichnung, datum, uhrzeit, dauer, kosten, max_teilnehmerzahl, min_reitlevel
 
 $mysqli = require __DIR__ . "/database.php";
 
@@ -28,6 +28,7 @@ $stmt = $mysqli->prepare("
     INSERT INTO termin (kursname, bezeichnung, datum, uhrzeit, dauer, kosten, max_teilnehmerzahl, min_reitlevel, reitlehrer_idreitlehrer)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
+
 $stmt->bind_param(
     "ssssisdii",
     $daten['kursname'],
@@ -40,6 +41,7 @@ $stmt->bind_param(
     $daten['min_reitlevel'],
     $reitlehrerId
 );
-$stmt->execute();
+
 echo json_encode(["status" => "success", "msg" => "Termin erstellt"]);
 $mysqli->close();
+?>

@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$dbname = "??";
+$dbname = "mentehofdb";
 $username = "root";
-$password = "";
+$password = "05092024";
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,

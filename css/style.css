@@ -134,6 +134,7 @@ body {
     height: 100vh;
 }
 
+
 .container {
     background: white;
     padding: 2rem;
@@ -167,4 +168,23 @@ button {
 #message {
     margin-top: 1rem;
     color: green;
+}
+
+
+.bewertung-balken {
+    width: 100px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bewertung-fuellung {
+    height: 100%;
+    background-color: #ffcc00;
+    text-align: center;
+    color: #333;
+    line-height: 20px;
+    font-size: 0.9rem;
+    border-radius: 5px 0 0 5px;
 }
