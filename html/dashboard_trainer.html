@@ -2,6 +2,10 @@
 <html lang="de">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Reitlehrer:in</title>
+    <link rel="stylesheet" href="../css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentehof Dashboard – Reitlehrer:in</title>
@@ -12,8 +16,7 @@
 <body>
 
     <header>
-        Willkommen am Mentehof
-
+        Willkommen im Mentehof
     </header>
 
 
@@ -21,6 +24,41 @@
         <a href="logout.html">Logout</a>
     </nav>
 
+            <h3>Meine geplanten Kurse</h3>
+            <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead>
+                    <tr style="background-color: #f0e4d7;">
+                        <th style="padding: 8px;">Datum</th>
+                        <th style="padding: 8px;">Uhrzeit</th>
+                        <th style="padding: 8px;">Ort</th>
+                        <th style="padding: 8px;">Teilnehmer</th>
+                        <th style="padding: 8px;">Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px;">13.06.2025</td>
+                        <td style="padding: 8px;">15:00</td>
+                        <td style="padding: 8px;">Reithalle 1</td>
+                        <td style="padding: 8px;">5</td>
+                        <td style="padding: 8px;">
+                            <a href="../html/teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">15.06.2025</td>
+                        <td style="padding: 8px;">09:30</td>
+                        <td style="padding: 8px;">Platz A</td>
+                        <td style="padding: 8px;">3</td>
+                        <td style="padding: 8px;">
+                            <a href="../html/teilnehmer_liste.html" style="color: #a6753d;">Anzeigen</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 2rem;">
+                <a href="../html/kurs_erstellen.html" class="btn">Neuen Kurs anlegen</a>
     <div class="layout">
         <aside class="sidebar">
             <ul id="nav">
@@ -211,6 +249,7 @@
             </div>
 
 
+     <script src="../js/lehrer.js"></script>
 
             <!-- Personenliste -->
             <div id="personenliste" class="section">
@@ -250,6 +289,7 @@
                 <h1>Termine verwalten</h1>
                 <br />
                 <p>Alle geplanten Kurse im Überblick. </p>
+                <br />
                 <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                     <a href="#" class="btn" onclick="openKursModal(event)">+ Neuer Kurs</a>
@@ -366,7 +406,7 @@
                     const dropdown = document.getElementById("profilDropdown");
                     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
                 }
-
+                <form id="benutzerForm">
                 // Schließen, wenn außerhalb geklickt wird
                 document.addEventListener("click", function (event) {
                     const button = document.getElementById("profilButton");
@@ -376,6 +416,58 @@
                     }
                 });
             </script>
+                    <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
+
+                    <label for="phone">Telefonnummer:</label>
+                    <input type="tel" id="phone" name="phone" required style="width: 100%; margin-bottom: 1rem;">
+
+                    <label for="age">Alter:</label>
+                    <input type="number" id="age" name="age" min="4" max="99" required style="width: 100%; margin-bottom: 1rem;">
+
+                    <label for="height">Größe (cm):</label>
+                    <input type="number" id="height" name="height" required style="width: 100%; margin-bottom: 1rem;">
+
+                    <label for="weight">Gewicht (kg):</label>
+                    <input type="number" id="weight" name="weight" required style="width: 100%; margin-bottom: 1rem;">
+
+                    <label for="level">Reitlevel:</label>
+                    <select id="level" name="level" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+                        <option value="">Bitte auswählen</option>
+                        <option value="Anfänger">Anfänger</option>
+                        <option value="Fortgeschritten">Fortgeschritten</option>
+                        <option value="Profi">Profi</option>
+                    </select>
+
+                    <label for="rolle">Rolle:</label>
+                    <select id="rolle" name="rolle" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+                        <option value="Schüler">Schüler</option>
+                        <option value="Reitlehrer">Reitlehrer</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+                        <option value="Aktiv">Aktiv</option>
+                        <option value="Inaktiv">Inaktiv</option>
+                    </select>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+                        <button type="button" onclick="closeBenutzerModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
+                        <button type="submit" class="btn">Speichern</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Buchungsansicht für Schüler:innen -->
+            <div id="buchung" class="section">
+                <h1>Kurse buchen</h1>
+                <p>Alle verfügbaren Kurse im Überblick.</p>
+
+
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+                    <a href="#" class="btn">Bearbeiten</a>
+                    <a href="#" class="btn">Löschen</a>
+                </div>
 
 
 

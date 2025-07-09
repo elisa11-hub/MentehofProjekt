@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Reitschüler</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="../img/logo.jpg" alt="Mentehof Logo" class="logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Startseite</a></li>
+                <li><a href="../html/kurse.html">Kurse</a></li>
+                <li><a href="../html/logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-card">
+            <h2>Willkommen zurück!</h2>
+            <p>Hier findest du deine gebuchten Reitkurse.</p>
+
+            <h3>Meine Kurse</h3>
+            <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead>
+                    <tr style="background-color: #f0e4d7;">
+                        <th style="padding: 8px;">Datum</th>
+                        <th style="padding: 8px;">Zeit</th>
+                        <th style="padding: 8px;">Trainer:in</th>
+                        <th style="padding: 8px;">Pferd</th>
+                        <th style="padding: 8px;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px;">12.06.2025</td>
+                        <td style="padding: 8px;">14:00</td>
+                        <td style="padding: 8px;">Frau Gruber</td>
+                        <td style="padding: 8px;">Bella</td>
+                        <td style="padding: 8px;">Gebucht</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">19.06.2025</td>
+                        <td style="padding: 8px;">10:30</td>
+                        <td style="padding: 8px;">Herr Steiner</td>
+                        <td style="padding: 8px;">Max</td>
+                        <td style="padding: 8px;">Warteliste</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 2rem;">
+                <a href="../html/kurse.html" class="btn">Neuen Kurs buchen</a>
+            </div>
+
+            <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
+                <strong>Info:</strong> Dein Kurs am 12.06. findet in der großen Reithalle statt.
+            </div>
+        </section>
+    </main>
+    <div id="kursliste"></div>
+
+    <script src="../js/buchungSchueler.js"></script>
+
+</body>
+</html>
