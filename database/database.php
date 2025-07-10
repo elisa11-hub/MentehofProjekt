@@ -3,7 +3,7 @@
 $host = "localhost";
 $dbname = "mentehofdb";
 $username = "root";
-$password = "05092024";
+$password = "";
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,
