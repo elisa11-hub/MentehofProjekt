@@ -1,32 +1,32 @@
 <?php
 
-if (empty($_POST["Vorname"])) {
+if (empty($_POST["vorname"])) {
     die("Firstname is required");
 }
 
-if (empty($_POST["Nachname"])) {
+if (empty($_POST["nachname"])) {
     die("Lastname is required");
 }
 
-if (strlen($_POST["Passwort"]) < 8) {
+if (strlen($_POST["passwort"]) < 8) {
     die("Password must be at least 8 characters");
 }
 
-if ( ! preg_match("/[a-z]/i", $_POST["Passwort"])) {
+if ( ! preg_match("/[a-z]/i", $_POST["passwort"])) {
     die("Password must contain at least one letter");
 }
 
-if ( ! preg_match("/[0-9]/", $_POST["Passwort"])) {
+if ( ! preg_match("/[0-9]/", $_POST["passwort"])) {
     die("Password must contain at least one number");
 }
 
 
-if (!preg_match("/[!@#$%^&*(),.?\":{}|<>_\-+=~`]/", $_POST["Passwort"])) {
+if (!preg_match("/[!@#$%^&*(),.?\":{}|<>_\-+=~`]/", $_POST["passwort"])) {
     die("Password must contain at least on special character");
 }
 
 
-if ($_POST["Passwort"] !== $_POST["password_confirmation"]) {
+if ($_POST["passwort"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
 
@@ -42,14 +42,15 @@ $password_hash = password_hash($_POST["passwort"], PASSWORD_DEFAULT);
 $vorname = $_POST["vorname"] ?? null;
 $nachname = $_POST["nachname"] ?? null;
 $geburtsdatum = $_POST["geburtsdatum"] ?? null;
+$alter = $_POST["alter"] ?? null;
 $email = $_POST["email"] ?? null;
 $telefon = $_POST["telefonnummer"] ?? null;
-$gewicht = $_POST["koerpergewicht"] ?? null;
-$groesse = $_POST["koerpergroesse"] ?? null;
+$gewicht = $_POST["gewicht"] ?? null;
+$groesse = $_POST["groesse"] ?? null;
 $reitlevel = $_POST["level"] ?? null;
 
 // === Schritt 1: Nutzer einfügen ===
-$sql = "INSERT INTO Nutzer (email, passwort, rolle) VALUES (?, ?, 'Reitschüler')";
+$sql = "INSERT INTO nutzer (email, passwort, rolle) VALUES (?, ?, 'Reitschüler')";
 $stmt = $mysqli->prepare($sql);
 if (!$stmt) die("SQL error (Nutzer): " . $mysqli->error);
 $stmt->bind_param("ss", $email, $password_hash);
@@ -63,15 +64,15 @@ if (!$stmt->execute()){
 $nutzer_id = $stmt->insert_id;
 
 // === Schritt 2: Reitschüler einfügen ===
-$sql = "INSERT INTO Reitschueler (idreitschueler, vorname, nachname, geburtsdatum, telefonnummer, koerpergewicht, koerpergroesse)
-               VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO reitschueler (idreitschueler, vorname, nachname, geburtsdatum, alter, telefonnummer, gewicht, groesse)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $mysqli->prepare($sql);
 if (!$stmt) die("SQL error (Nutzer): " . $mysqli->error);
-$stmt->bind_param("issssdd", $nutzer_id,$vorname, $nachname, $geburtsdatum, $telefonnummer, $koerpergewicht, $koerpergroesse);
+$stmt->bind_param("isssssdd", $nutzer_id,$vorname, $nachname, $geburtsdatum, $alter, $telefonnummer, $koerpergewicht, $koerpergroesse);
 $stmt->execute();
 
 // === Schritt 3: Aktuelles Reitlevel zuweisen ===
-$sql = "INSERT INTO Aktuelles_Reitlevel (idreitlevel, idschueler) VALUES (?, ?)";
+$sql = "INSERT INTO aktuelles_reitlevel (reitlevel_idreitlevel, reitschueler_idreitschueler) VALUES (?, ?)";
 $stmt = $mysqli->prepare($sql);
 if (!$stmt) die("SQL error (Reitlevel): " . $mysqli->error);
 $stmt->bind_param("ii", $reitlevel_id, $nutzer_id);

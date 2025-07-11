@@ -21,17 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $result->fetch_assoc();
 
     // Passwort prüfen
-    if ($user && password_verify($_POST["password"], $user["password_hash"])) {
+    if ($user && password_verify($_POST["password"], $user["passwort"])) {
         session_regenerate_id();
         $_SESSION["nutzer_id"] = $user["idnutzer"];
-        $_SESSION["rolle"] = $user["role"];
+        $_SESSION["rolle"] = $user["rolle"];
         
         // Weiterleitung basierend auf der Rolle des Benutzers
-        if ($user["role"] === "admin") {
+        if ($user["rolle"] === "Admin") {
             header("Location: dashboard_admin.html");
-        } elseif ($user["role"] === "reitlehrer") {
+        } elseif ($user["rolle"] === "Reitlehrer") {
             header("Location: dashboard_trainer.html");
-        } elseif ($user["role"] === "reitschueler") {
+        } elseif ($user["rolle"] === "Reitschüler") {
             header("Location: dashboard_schueler.html");
         } else {
             // Unerwartete Rolle:
