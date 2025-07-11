@@ -68,7 +68,7 @@ $sql = "INSERT INTO bewertung
         VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $mysqli->prepare($sql);
-$stmt->bind_param("iiiiss", $reitschueler_id, $reitlehrer_id, $termin_id, $sterne, $kommentar, $datum);
+$stmt->bind_param("iiiisd", $reitschueler_id, $reitlehrer_id, $termin_id, $sterne, $kommentar, $datum);
 
 if ($stmt->execute()) {
     echo "Bewertung erfolgreich abgegeben.";

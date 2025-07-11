@@ -6,9 +6,9 @@ $sql = "
 SELECT 
     CONCAT(nachname, ', ', vorname) AS name,
     email,
-    role
+    rolle
 FROM nutzer
-WHERE role IN ('reitlehrer', 'reitschueler')
+WHERE rolle IN ('reitlehrer', 'reitschueler')
 ORDER BY nachname ASC
 ";
 
