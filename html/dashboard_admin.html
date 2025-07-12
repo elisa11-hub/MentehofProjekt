@@ -338,7 +338,7 @@
                 <h1>Personenliste</h1>
                 <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <a href="register.html" class="btn">+ Neue Person anlegen</a>
+                    <a href="../hmtl/register.html" class="btn">+ Neue Person anlegen</a>
                     <div>
                         <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                     </div>
@@ -444,24 +444,104 @@
                     </div>
                 </form>
             </div>
-        </main>
-    </div>
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-        function logout() {
-            localStorage.removeItem("rolle");
-            window.location.href = "login.html";
-        }
-        function openKursModal(e) {
-            e.preventDefault();
-            document.getElementById("kursModal").style.display = "block";
-        }
-        function closeKursModal() {
-            document.getElementById("kursModal").style.display = "none";
-        }
-    </script>
+
+            <script>
+                function openKursModal(e) {
+                    e.preventDefault();
+                    document.getElementById("kursModal").style.display = "block";
+                }
+
+                function closeKursModal() {
+                    document.getElementById("kursModal").style.display = "none";
+                }
+            </script>
+
+
+            <!-- Profil-Button (rund, rechts oben) -->
+            <div class="profil-wrapper">
+                <div id="profilButton" onclick="showSection('profil')">
+                    <img src="../img/icon.jpg" alt="Profilbild">
+                </div>
+
+            </div>
+
+            <section class="section" id="profil">
+                <h1>Mein Profil</h1>
+                <br />
+                <form class="form-card">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="z. B. Max" />
+
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" id="nachname" name="nachname" placeholder="z. B. Mustermann" />
+
+                    <label for="telefon">Telefonnummer:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+43 ..." />
+
+                    <div class="profil-btns">
+                        <button type="submit" class="btn">Speichern</button>
+                        <button type="button" class="btn btn-zurueck" onclick="showSection('dashboard')">Zurück</button>
+                    </div>
+                </form>
+            </section>
+
+
+            <script>
+                function toggleProfilDropdown() {
+                    const dropdown = document.getElementById("profilDropdown");
+                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+                }
+
+                // Schließen, wenn außerhalb geklickt wird
+                document.addEventListener("click", function (event) {
+                    const button = document.getElementById("profilButton");
+                    const dropdown = document.getElementById("profilDropdown");
+                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.style.display = "none";
+                    }
+                });
+            </script>
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const neuerBenutzerBtn = document.querySelector("#benutzer .btn");
+                    if (neuerBenutzerBtn) {
+                        neuerBenutzerBtn.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            document.getElementById("benutzerModal").style.display = "block";
+                        });
+                    }
+                });
+
+                function closeBenutzerModal() {
+                    document.getElementById("benutzerModal").style.display = "none";
+                }
+            </script>
+
+            <script>
+                const rolle = localStorage.getItem("rolle") || "Schueler";
+
+                function showSection(id) {
+                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+                    document.getElementById(id).classList.add('active');
+                }
+
+                function logout() {
+                    localStorage.removeItem("rolle");
+                    window.location.href = "login.html";
+                }
+            </script>
+
+
+
+
+
+
+
+
+            <script src="js/admin.js"></script>
+
 </body>
 </html>

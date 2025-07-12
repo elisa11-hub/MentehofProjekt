@@ -504,11 +504,23 @@
             document.getElementById("kursModal").style.display = "none";
         }
 
-        function showSection(id) {
-            document.querySelectorAll('.section').forEach(el => el.style.display = "none");
-            let section = document.getElementById(id);
-            if (section) section.style.display = "block";
-        }
+                function showSection(id) {
+                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+                    document.getElementById(id).classList.add('active');
+                }
+
+                function logout() {
+                    localStorage.removeItem("rolle");
+                    window.location.href = "login.html";
+                }
+            </script>
+
+
+
+        </main>
+    </div>
+
+    <script src="js/lehrer.js"></script>
 
         // Starte mit Dashboard sichtbar
         document.addEventListener("DOMContentLoaded", function () {
