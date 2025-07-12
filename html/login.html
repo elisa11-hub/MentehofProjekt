@@ -5,35 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login – Mentehof</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/style.css">
 
-</head>
-<body>
+    <style>
+        header {
+            background-color: ;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <header>
-        <h1>Login – Mentehof</h1>
-        <nav>
-            <ul>
-                <li><a href="register.html">Registrieren</a></li>
-            </ul>
-        </nav>
-    </header>
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-    <main>
-        <form id="loginForm" class="form-card">
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" name="email" required />
+        .logo {
+            width: 160px;
+            height: auto;
+        }
 
-            <label for="password">Passwort:</label>
-            <input type="password" id="password" name="password" required />
+        .header-title {
+            flex: 1;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 2px;
+        }
 
-            
-            <button type="submit" class="btn">Login</button>
-        </form>
+        nav {
+            display: flex;
+            align-items: center;
+        }
 
-       
-    </main>
+        
+        .btn {
+            background-color: #c89c6c;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(200,156,108,0.2);
+            border: 2px solid #a7794e;
+            transition: background 0.2s, color 0.2s;
+            margin-left: 0;
+        }
 
-    
-</body>
-</html>
+            .btn:hover {
+                background-color: #a7794e;
+                color: #fff;
+            }
+
+    </style>
+        </head >
+        <body >
+
+            <header>
+                <div class="logo-container">
+                    <img src="../img/logo_neu.png" alt="Mentehof Logo" class="logo" />
+                </div>
+                <h1 class="header-title">Login</h1>
+                <nav>
+                    <a href="register.html" class="btn"> Registrieren</a>
+                </nav>
+            </header>
+
+        <main >
+        <form id="loginForm" class="form-card" >
+        <label for="email" > E-Mail:</label >
+        <input type="email" id="email" name="email" required / >
+
+        <label for="password" > Passwort:</label >
+        <input type="password" id="password" name="password" required / >
+
+        <button type="submit" class="btn" > Login</button >
+        </form >
+        </main >
+
+        </body >
+        </html >

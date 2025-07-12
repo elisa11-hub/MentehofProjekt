@@ -16,9 +16,14 @@
 
         header {
             background-color: #a7794e;
-            padding: 1rem 0;
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
             align-items: center;
         }
 
@@ -26,18 +31,23 @@
             width: 160px;
             height: auto;
         }
-        .login-text {
+
+        .btn {
+            background-color: #c89c6c;
             color: white;
-            font-size: 1.5rem;
+            padding: 0.5rem 1.5rem;
             font-weight: bold;
-            margin-top: 0.5rem;
             text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #a7794e;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(200,156,108,0.2);
+            transition: background 0.2s, color 0.2s;
         }
 
-            .login-text:hover {
-                text-decoration: underline;
+            .btn:hover {
+                background-color: #8b5e33;
             }
-
 
         main {
             display: flex;
@@ -65,34 +75,17 @@
                 font-size: 0.95rem;
                 margin-bottom: 1.5rem;
             }
-
-        .btn {
-            background-color: #a6753d;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-            .btn:hover {
-                background-color: #8b5e33;
-            }
     </style>
 </head>
 <body>
 
   <header>
     <div class="logo-container">
-      <img src="../img/logo.jpg" alt="Mentehof Logo" class="logo" />
+      <img src="../img/logo_neu.png" alt="Mentehof Logo" class="logo" />
       
     </div>
     <nav>
-      <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="#">Kurse</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+      <a href="login.html" class="btn">Login</a>
     </nav>
   </header>
 
