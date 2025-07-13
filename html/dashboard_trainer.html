@@ -401,21 +401,7 @@
             </section>
 
 
-            <script>
-                function toggleProfilDropdown() {
-                    const dropdown = document.getElementById("profilDropdown");
-                    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-                }
-                <form id="benutzerForm">
-                // Schließen, wenn außerhalb geklickt wird
-                document.addEventListener("click", function (event) {
-                    const button = document.getElementById("profilButton");
-                    const dropdown = document.getElementById("profilDropdown");
-                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-                        dropdown.style.display = "none";
-                    }
-                });
-            </script>
+          
                     <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
 
                     <label for="phone">Telefonnummer:</label>
@@ -470,66 +456,10 @@
                 </div>
 
 
-
-
-
-            <script>
-                function openKursModal(e) {
-                    e.preventDefault();
-                    document.getElementById("kursModal").style.display = "block";
-                }
-
-                function closeKursModal() {
-                    document.getElementById("kursModal").style.display = "none";
-                }
-            </script>
-
-
-
-
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const neuerBenutzerBtn = document.querySelector("#benutzer .btn");
-                    if (neuerBenutzerBtn) {
-                        neuerBenutzerBtn.addEventListener("click", function (e) {
-                            e.preventDefault();
-                            document.getElementById("benutzerModal").style.display = "block";
-                        });
-                    }
-                });
-
-                function closeBenutzerModal() {
-                    document.getElementById("benutzerModal").style.display = "none";
-                }
-            </script>
-
-            <script>
-                const rolle = localStorage.getItem("rolle") || "Schueler";
-
-                function showSection(id) {
-                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-                    document.getElementById(id).classList.add('active');
-                }
-
-                function logout() {
-                    localStorage.removeItem("rolle");
-                    window.location.href = "login.html";
-                }
-            </script>
-
-
-
         </main>
     </div>
 
     <script src="../js/lehrer.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            showSection("dashboard");
-        });
-    </script>
 
 </body>
 
