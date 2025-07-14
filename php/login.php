@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     
-    header("Location: ../html/login.html?fehlermeldung=1");
-    exit;
+    header("Location: ../html/login.html?fehler=1");
+    exit();
 }
 
 
