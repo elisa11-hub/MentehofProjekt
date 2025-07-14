@@ -33,7 +33,7 @@ if ($_POST["passwort"] !== $_POST["password_confirmation"]) {
 
 $mysqli = require __DIR__ . "/../database/database.php";
 
-$password_hash = $_POST["passwort"];
+$password_hash = password_hash($_POST["passwort"], PASSWORD_DEFAULT);
 
 // Formulardaten erfassen (mit Fallback für leere Werte)
 $vorname = $_POST["vorname"] ?? null;
@@ -45,6 +45,8 @@ $telefon = $_POST["telefonnummer"] ?? null;
 $gewicht = $_POST["gewicht"] ?? null;
 $groesse = $_POST["groesse"] ?? null;
 $reitlevel = $_POST["level"] ?? null;
+
+$reitlevel_id = $reitlevel;
 
 // === Schritt 1: Nutzer einfügen ===
 $sql = "INSERT INTO nutzer (email, passwort, rolle) VALUES (?, ?, 'Reitschüler')";
@@ -65,7 +67,7 @@ $sql = "INSERT INTO reitschueler (idreitschueler, vorname, nachname, geburtsdatu
                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $mysqli->prepare($sql);
 if (!$stmt) die("SQL error (Nutzer): " . $mysqli->error);
-$stmt->bind_param("isssssdd", $nutzer_id,$vorname, $nachname, $geburtsdatum, $alter, $telefonnummer, $koerpergewicht, $koerpergroesse);
+$stmt->bind_param("isssssdd", $nutzer_id,$vorname, $nachname, $geburtsdatum, $alter, $telefonnummer, $gewicht, $groesse);
 $stmt->execute();
 
 // === Schritt 3: Aktuelles Reitlevel zuweisen ===

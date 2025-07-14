@@ -15,15 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    // Vergleich OHNE Hash
-    if ($user && $password === $user["passwort"]) {
+    if ($user && password_verify($password, $user["passwort"])) {
         $_SESSION["nutzer_id"] = $user["idnutzer"];
         $_SESSION["rolle"] = $user["rolle"];
         header("Location: ../html/dashboard.html");
         exit;
     }
 
-    
     header("Location: ../html/login.html?fehler=1");
     exit();
 }
