@@ -200,16 +200,14 @@
                             <th>max. Teilnehmeranzahl</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr style="height: 3rem; background-color: #fff7ef;">
-                            <td colspan="4" style="font-style: italic; color: #777; text-align: center;">Noch keine Termine eingetragen.</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="kurs-tabelle">
+                    <tr>
+                        <td colspan="4" style="font-style: italic; color: #777; text-align: center;">
+                            Noch keine Termine eingetragen.
+                        </td>
+                    </tr>
+                </tbody>
                 </table>
-                <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
-                    <strong>Info:</strong>
-                </div>
-
                 <!-- Bewertungsübersicht -->
                 <h3 style="margin-top: 2rem;">Bewertungsübersicht</h3>
                 <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
@@ -428,46 +426,43 @@
             </section>
 
             <!-- neuen Kurs hinzufügen -->
-            <div id="kursModal" style="display:none; position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background-color: #f6e9d7; padding: 2rem; border: 2px solid #a7794e; border-radius: 8px; width: 90%; max-width: 600px; z-index: 1000; max-height: 90vh; overflow-y: auto;">
-                <h2>Neuen Kurs anlegen</h2>
+            <div id="kursModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeKursModal()">&times;</span>
+                <h2>Neuen Kurs erstellen</h2>
                 <form id="kursForm">
-                    <br />
-                    <label for="kursname">Kursname:</label>
-                    <input type="text" id="kursname" name="kursname" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Kursname:</label><br />
+                    <input type="text" name="kursname" required><br /><br />
 
-                    <label for="bezeichnung">Bezeichnung:</label>
-                    <input type="text" id="bezeichnung" name="bezeichnung" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Bezeichnung:</label><br />
+                    <input type="text" name="bezeichnung"><br /><br />
 
-                    <label for="reitlevel">Min.Reitlevel:</label>
-                    <input type="text" id="reitlevel" name="reitlevel" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Datum:</label><br />
+                    <input type="date" name="datum" required><br /><br />
 
-                    <label for="kosten">Kosten:</label>
-                    <input type="number" id="kosten" name="kosten" step="0.01" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Uhrzeit:</label><br />
+                    <input type="time" name="uhrzeit" required><br /><br />
 
-                    <label for="datum">Datum:</label>
-                    <input type="date" id="datum" name="datum" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Ort:</label><br />
+                    <input type="text" name="ort"><br /><br />
 
-                    <label for="zeit">Uhrzeit:</label>
-                    <input type="time" id="zeit" name="zeit" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Kosten (€):</label><br />
+                    <input type="number" name="kosten" min="0" step="0.01"><br /><br />
 
-                    <label for="dauer">Dauer (in Minuten):</label>
-                    <input type="number" id="dauer" name="dauer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>Dauer (Minuten):</label><br />
+                    <input type="number" name="dauer" min="1"><br /><br />
 
-                    <label for="ort">Ort:</label>
-                    <input type="text" id="ort" name="ort" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>max. Teilnehmeranzahl:</label><br />
+                    <input type="number" name="max_teilnehmeranzahl" min="1"><br /><br />
 
-                    <label for="max">Maximale Teilnehmeranzahl:</label>
-                    <input type="number" id="max" name="max" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
+                    <label>min. Reitlevel:</label><br />
+                    <input type="number" name="min_reitlevel" min="1"><br /><br />
 
-                    <label for="reitlehrer">Reitlehrer:</label>
-                    <input type="text" id="reitlehrer" name="reitlehrer" required style="width: 100%; margin-bottom: 1rem; height: 2.5rem; font-size: 1.1rem;">
-
-                    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
-                        <button type="button" onclick="closeKursModal()" class="btn" style="background-color: #ccc; color: #333;">Abbrechen</button>
-                        <button type="submit" class="btn">Speichern</button>
-                    </div>
+                    <button type="submit" class="btn">Speichern</button>
                 </form>
             </div>
+        </div>
+
 
             <!-- Profil-Button (rund, rechts oben) -->
             <section class="section" id="profil" style="display:none;">
@@ -492,7 +487,6 @@
         </main>
     </div>
 
-<<<<<<< HEAD
           
                     <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 1rem;">
 
@@ -547,45 +541,14 @@
                     <a href="#" class="btn">Löschen</a>
                 </div>
 
-=======
-    <script src="../js/lehrer.js"></script>
-    <script>
-        function openKursModal(e) {
-            e.preventDefault();
-            document.getElementById("kursModal").style.display = "block";
-        }
-
-        function closeKursModal() {
-            document.getElementById("kursModal").style.display = "none";
-        }
-
-                function showSection(id) {
-                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-                    document.getElementById(id).classList.add('active');
-                }
-
-                function logout() {
-                    localStorage.removeItem("rolle");
-                    window.location.href = "login.html";
-                }
-            </script>
+        <script src="../js/reitlehrer_eigene_termine.js"></script> 
+        <script src="../js/abschnitte_dashboardtrainer.js"></script> 
+        <script src="../js/reitlehrer_bewertungen.js"></script>
+        <script src="../js/kursModul_oeffnen.js"></script>
+        <script src="../js/kurs_speichern_reitlehrer.js"></script>
 
 
->>>>>>> 71b97d9b2cffe25f39636d3cc7102f6fc522b94e
 
-        </main>
-    </div>
-
-    <script src="js/lehrer.js"></script>
-
-<<<<<<< HEAD
-=======
-        // Starte mit Dashboard sichtbar
-        document.addEventListener("DOMContentLoaded", function () {
-            showSection("dashboard");
-        });
-    </script>
->>>>>>> 71b97d9b2cffe25f39636d3cc7102f6fc522b94e
 </body>
 
 </html>

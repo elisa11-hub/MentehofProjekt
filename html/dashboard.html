@@ -158,6 +158,7 @@
 
 </head>
 <body>
+    
 
     <header>
         <div class="logo-container">
@@ -259,6 +260,7 @@
                     </tbody>
                 </table>
             </div>
+            
            
 
 
@@ -691,40 +693,12 @@
                             </div>
                         </form>
                     </section>
+                    </main >
 
+                    <script src="../js/schüler_meine_kurse.js"></script>
+                    <script src="../js/bewertungen_schüler.js"></script>
+                    <script src="../js/alle_kurse.js"></script>
 
-
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function () {
-                                const neuerBenutzerBtn = document.querySelector("#benutzer .btn");
-                                if (neuerBenutzerBtn) {
-                                    neuerBenutzerBtn.addEventListener("click", function (e) {
-                                        e.preventDefault();
-                                        document.getElementById("benutzerModal").style.display = "block";
-                                    });
-                                }
-                            });
-
-                            function closeBenutzerModal() {
-                                document.getElementById("benutzerModal").style.display = "none";
-                            }
-                        </script>
-
-                        <script>
-                            const rolle = localStorage.getItem("rolle") || "Schueler";
-
-                            function showSection(id) {
-                                document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-                                document.getElementById(id).classList.add('active');
-                            }
-
-                            function logout() {
-                                localStorage.removeItem("rolle");
-                                window.location.href = "../html/login.html";
-                            }
-                        </script>
-                        
-<script src="../js/schueler.js"></script>
 
 </body>
 </html>

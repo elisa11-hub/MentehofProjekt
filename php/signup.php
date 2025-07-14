@@ -33,8 +33,7 @@ if ($_POST["passwort"] !== $_POST["password_confirmation"]) {
 
 $mysqli = require __DIR__ . "/../database/database.php";
 
-// Passwort sicher hashen
-$password_hash = password_hash($_POST["passwort"], PASSWORD_DEFAULT);
+$password_hash = $_POST["passwort"];
 
 // Formulardaten erfassen (mit Fallback für leere Werte)
 $vorname = $_POST["vorname"] ?? null;

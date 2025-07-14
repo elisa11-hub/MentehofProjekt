@@ -192,10 +192,7 @@
                 <div style="margin-top: 2rem; background-color: #fffbe6; padding: 1rem; border-left: 5px solid #a6753d;">
                     <strong>Info:</strong>
                 </div>
-                <div style="margin: 1.5rem 0;">
-                    <a href="../html/admin_benutzer.html" class="btn">Benutzer verwalten</a>
-                    <a href="../html/admin_kurse.html" class="btn">Kurse verwalten</a>
-                </div>
+                
             </div>
 
             <!-- Kalender Section -->
@@ -337,7 +334,7 @@
                 <h1>Personenliste</h1>
                 <br />
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <a href="../hmtl/register.html" class="btn">+ Neue Person anlegen</a>
+                    <a href="../html/register.html" class="btn">+ Neue Person anlegen</a>
                     <div>
                         <a href="#" class="btn" style="background-color:#bb3e3e">Löschen</a>
                     </div>
@@ -519,28 +516,10 @@
                 }
             </script>
 
-            <script>
-                const rolle = localStorage.getItem("rolle") || "Schueler";
-
-                function showSection(id) {
-                    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-                    document.getElementById(id).classList.add('active');
-                }
-
-                function logout() {
-                    localStorage.removeItem("rolle");
-                    window.location.href = "login.html";
-                }
-            </script>
-
-
-
-
-
-
-
-
-            <script src="js/admin.js"></script>
+            
+            <script src="../js/Show_section.js"></script> 
+            <script src="../js/get_nutzer.js"></script> 
+            <script src="../js/alle_kurse_admin.js"></script> 
 
 </body>
 </html>

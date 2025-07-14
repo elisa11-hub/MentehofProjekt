@@ -76,15 +76,23 @@
             </header>
 
         <main >
-        <form id="loginForm" class="form-card" >
-        <label for="email" > E-Mail:</label >
-        <input type="email" id="email" name="email" required / >
+        
+        <h1>Login</h1>
+        <div id="fehlermeldung" style="color:red; font-weight:bold;"></div>
 
-        <label for="password" > Passwort:</label >
-        <input type="password" id="password" name="password" required / >
+        <form method="post" action="../php/login.php">
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" id="email" required>
 
-        <button type="submit" class="btn" > Login</button >
-        </form >
+            <label for="passwort">Passwort</label>
+            <input type="password" name="passwort" id="passwort" required>
+
+
+            <button>Log in</button>
+
+            <a href="../html/register.html">⬅ Zurück zum Registrieren</a>
+        </form>
+
         </main >
 
         </body >
